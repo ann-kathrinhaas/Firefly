@@ -1,2 +1,2 @@
 # Firefly
-Kreativkonzeption Projekt WiSe23/24
+Kreativkonzeption Projekt WiSe 23/24
