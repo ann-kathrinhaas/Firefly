@@ -1,0 +1,66 @@
+body {
+  background-color: #000000;
+  color: #ffffff;
+  text-align: center;
+  color: white;
+  font-family: Koulen;
+  text-transform: uppercase;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+p {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+.text-wrapper {
+  position: relative;
+  margin: 0 auto;
+  width: 67rem;
+  height: 18rem;
+  opacity: 0; /* Startet unsichtbar */
+  transition: opacity 0.5s ease-out;
+}
+.text-wrapper .bg-image {
+  background-image: url("../img/text-wrapper.png");
+  background-repeat: no-repeat;
+  width: 67rem;
+  height: 18rem;
+}
+.text-wrapper p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.text-wrapper.show {
+  opacity: 1;
+}
+
+button {
+  font-family: Koulen;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+.btn-wrapper {
+  width: 25rem;
+  height: 10rem;
+  margin: 0 auto;
+  background-image: url("../img/btn-start.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.btn-wrapper .btn-start {
+  width: 25rem;
+  height: 10rem;
+  background-color: transparent;
+  border: none;
+}
+.btn-wrapper:hover {
+  background-image: url("../img/btn-start-hover.png");
+}/*# sourceMappingURL=style.css.map */
