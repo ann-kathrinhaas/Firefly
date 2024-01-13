@@ -1,11 +1,7 @@
-// Warte 7 Sekunden (7000 Millisekunden) und füge dann die Klasse 'show' hinzu
 setTimeout(function() {
     var textWrapper = document.querySelector('.text-wrapper');
     textWrapper.classList.add('show');
 }, 7000);
-
-
-
 
 
 var i = 0;
@@ -19,17 +15,15 @@ function typeWriter() {
         i++;
         setTimeout(typeWriter, speed);
     } else if (currentIndex < texts.length - 1) {
-        // Warte 2000 Millisekunden (2 Sekunden) und rufe dann die Funktion mit dem neuen Text auf
         setTimeout(function () {
-            i = 0; // Setze den Zähler zurück
-            currentIndex++; // Wechsle zum nächsten Text
-            document.getElementById("text-1").innerHTML = ''; // Leere den aktuellen Text
-            typeWriter(); // Starte die Funktion erneut für den neuen Text
+            i = 0;
+            currentIndex++;
+            document.getElementById("text-1").innerHTML = '';
+            typeWriter();
         }, 2000);
     } else {
-        // Wenn der letzte Text geschrieben wurde, höre auf und beende die Funktion
         return;
     }
 }
 
-typeWriter(); // Starte die Funktion beim Laden der Seite
+typeWriter();
