@@ -89,4 +89,21 @@ button {
 }
 .btn-wrapper:hover {
   background-image: url("../img/btn-start-hover.png");
+}
+
+.sign-wrapper {
+  height: 80vh;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: fixed;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sign-wrapper img {
+  height: 80vh;
 }/*# sourceMappingURL=style.css.map */
