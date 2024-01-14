@@ -41,3 +41,17 @@ setTimeout(function() {
         }, 3000);
     }, 5000);
 }, 7000);
+
+
+setTimeout(function() {
+    var btnWrapper = document.querySelector('.btn-wrapper');
+    setTimeout(function() {
+        btnWrapper.classList.remove('hide');
+        btnWrapper.classList.add('show');
+    }, 5000);
+}, 30000);
+
+
+function redirectToCategories() {
+    window.location.href = '02_categories.html';
+}
