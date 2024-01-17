@@ -140,6 +140,24 @@ button {
 
 // Sign
 
+// .sign-wrapper {
+//   height: 80vh;
+//   margin: 0 auto;
+//   background-repeat: no-repeat;
+//   background-size: contain;
+//   position: fixed;
+//   top: 50%;
+//   left: 60%;
+//   transform: translate(-50%, -50%);
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+
+//   img {
+//     height: 80vh;
+//   }
+// }
+
 .sign-wrapper {
   height: 80vh;
   margin: 0 auto;
@@ -152,8 +170,16 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+}
 
-  img {
-    height: 80vh;
+.sign-wrapper img {
+  height: 80vh;
+  opacity: 0;
+  animation: fadeIn 8s ease-in-out forwards 3s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
   }
 }
