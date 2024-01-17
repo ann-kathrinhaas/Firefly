@@ -10,8 +10,15 @@
     <link rel="icon" href="../img/favicon.png" type="image/x-icon">
 </head>
 <body>
+    <!-- <video id="videoPlayer" autoplay muted onended="playNextVideo()" src="../videos/Szene_2/Szene2_01.webm" type="video/webm"></video> -->
+
+    <video id="videoPlayer" autoplay muted onended="playNextVideo()">
+        <source src="../videos/Szene_2/Szene2_01.webm" type="video/webm">
+        <source src="../videos/Szene_2/Szene2_02.webm" type="video/webm">
+    </video>
+
     <div class="sign-wrapper">
-        <img src="../img/sign.png">
+        <img class="animate-from-left" src="../img/sign.png">
     </div>
 </body>
 </html>

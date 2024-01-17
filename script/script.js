@@ -55,3 +55,25 @@ setTimeout(function() {
 function redirectToCategories() {
     window.location.href = '02_categories.html';
 }
+
+
+function playNextVideo() {
+    document.getElementById('videoPlayer').src = '../videos/Szene_2/Szene2_02.webm';
+    document.getElementById('videoPlayer').play();
+  }
+
+
+  function playNextVideo() {
+    const videoSources = [
+      "../videos/Szene_2/Szene2_02.webm"
+    ];
+
+    const videoPlayer = document.getElementById('videoPlayer');
+    const currentVideoIndex = videoSources.indexOf(videoPlayer.src);
+
+    const nextVideoIndex = (currentVideoIndex + 1) % videoSources.length;
+    const nextVideoSource = videoSources[nextVideoIndex];
+
+    videoPlayer.src = nextVideoSource;
+    videoPlayer.play();
+  }
