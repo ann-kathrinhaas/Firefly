@@ -1,5 +1,5 @@
 setTimeout(function() {
-    var textWrapper = document.querySelector('.text-wrapper');
+    var textWrapper = document.querySelector('.t-w-1');
     
     setTimeout(function() {
         textWrapper.classList.remove('hide');
@@ -77,3 +77,47 @@ function playNextVideo() {
     videoPlayer.src = nextVideoSource;
     videoPlayer.play();
   }
+
+
+setTimeout(function() {
+    var textWrapper = document.querySelector('.t-w-2');
+    
+    setTimeout(function() {
+        textWrapper.classList.remove('hide');
+        textWrapper.classList.add('show');
+        
+        setTimeout(function() {
+            var i = 0;
+            var texts = [
+                'Da bist du ja wieder.',
+                'Schau mal, hier kannst du einen Pfad aussuchen.', 
+                'Welche Richtung moechtest du einschlagen?'
+            ];
+
+            var speed = 50;
+            var currentIndex = 0;
+
+            function typeWriter() {
+                if (i < texts[currentIndex].length) {
+                    document.getElementById("text-2").innerHTML += texts[currentIndex].charAt(i);
+                    i++;
+                    setTimeout(typeWriter, speed);
+                } else if (currentIndex < texts.length - 1) {
+                    setTimeout(function () {
+                        i = 0;
+                        currentIndex++;
+                        document.getElementById("text-2").innerHTML = '';
+                        typeWriter();
+                    }, 2000);
+                } else {
+                    setTimeout(function() {
+                        textWrapper.classList.remove('show');
+                        textWrapper.classList.add('hide');
+                    }, 3000);
+                }
+            }
+
+            typeWriter();
+        }, 3000);
+    }, 5000);
+}, 7000);
