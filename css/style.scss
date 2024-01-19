@@ -87,6 +87,10 @@ button {
   color: $main-font-color;
   font-size: 2rem;
   line-height: 2.5rem;
+  
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .btn-wrapper {
@@ -170,12 +174,124 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-}
 
-.sign-wrapper img {
-  height: 80vh;
-  opacity: 0;
-  animation: fadeIn 8s ease-in-out forwards 3s;
+  img {
+    height: 80vh;
+    opacity: 0;
+    animation: fadeIn 8s ease-in-out forwards 3s;
+  }
+
+  .hover-wrapper {
+    height: 80vh;
+    width: 20rem;
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-58%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    z-index: 1;
+    background-color: transparent;
+  
+    .category {
+      width: inherit;
+      height: 2rem;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      p {
+        font-size: 1rem;
+        opacity: 0;
+      }
+
+      &.c-1 {
+        height: 4rem;
+
+        p {
+          rotate: -2deg;
+          text-align: left;
+          padding-left: 3.5rem;   
+          text-shadow: $orange 1px 0 10px;   
+        }
+
+        &:hover {
+          p {
+            opacity: 1;
+          }
+        }
+      }
+
+      &.c-2 {
+        height: 5rem;
+
+        p {
+          rotate: 8deg;
+          padding-top: 0.8rem;
+          padding-right: 1.5rem;
+          text-shadow: $mint 1px 0 10px; 
+        }
+
+        &:hover {
+          p {
+            opacity: 1;
+          }
+        }
+      }
+
+      &.c-3 {
+        height: 6.5rem;
+
+        p {
+          rotate: 8deg;
+          padding-top: 1.5rem;
+          text-shadow: $blue 1px 0 10px; 
+        }
+
+        &:hover {
+          p {
+            opacity: 1;
+          }
+        }
+      }
+
+      &.c-4 {
+        height: 6rem;
+
+        p {
+          rotate: 8deg;
+          padding-top: 1rem;
+          text-shadow: $pink 1px 0 10px; 
+        }
+
+        &:hover {
+          p {
+            opacity: 1;
+          }
+        }
+      }
+
+      &.c-5 {
+        height: 7rem;
+
+        p {
+          rotate: 9deg;
+          padding-top: 1.3rem;
+          text-shadow: $green 1px 0 10px; 
+        }
+
+        &:hover {
+          p {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
 }
 
 @keyframes fadeIn {

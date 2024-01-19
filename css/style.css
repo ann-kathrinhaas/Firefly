@@ -59,6 +59,9 @@ button {
   font-size: 2rem;
   line-height: 2.5rem;
 }
+button:hover {
+  cursor: pointer;
+}
 
 .btn-wrapper {
   width: 25rem;
@@ -104,12 +107,93 @@ button {
   align-items: center;
   justify-content: center;
 }
-
 .sign-wrapper img {
   height: 80vh;
   opacity: 0;
   -webkit-animation: fadeIn 8s ease-in-out forwards 3s;
           animation: fadeIn 8s ease-in-out forwards 3s;
+}
+.sign-wrapper .hover-wrapper {
+  height: 80vh;
+  width: 20rem;
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  transform: translate(-58%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: 1;
+  background-color: transparent;
+}
+.sign-wrapper .hover-wrapper .category {
+  width: inherit;
+  height: 2rem;
+}
+.sign-wrapper .hover-wrapper .category:hover {
+  cursor: pointer;
+}
+.sign-wrapper .hover-wrapper .category p {
+  font-size: 1rem;
+  opacity: 0;
+}
+.sign-wrapper .hover-wrapper .category.c-1 {
+  height: 4rem;
+}
+.sign-wrapper .hover-wrapper .category.c-1 p {
+  rotate: -2deg;
+  text-align: left;
+  padding-left: 3.5rem;
+  text-shadow: #FF8A00 1px 0 10px;
+}
+.sign-wrapper .hover-wrapper .category.c-1:hover p {
+  opacity: 1;
+}
+.sign-wrapper .hover-wrapper .category.c-2 {
+  height: 5rem;
+}
+.sign-wrapper .hover-wrapper .category.c-2 p {
+  rotate: 8deg;
+  padding-top: 0.8rem;
+  padding-right: 1.5rem;
+  text-shadow: #8DF5DC 1px 0 10px;
+}
+.sign-wrapper .hover-wrapper .category.c-2:hover p {
+  opacity: 1;
+}
+.sign-wrapper .hover-wrapper .category.c-3 {
+  height: 6.5rem;
+}
+.sign-wrapper .hover-wrapper .category.c-3 p {
+  rotate: 8deg;
+  padding-top: 1.5rem;
+  text-shadow: #0894E2 1px 0 10px;
+}
+.sign-wrapper .hover-wrapper .category.c-3:hover p {
+  opacity: 1;
+}
+.sign-wrapper .hover-wrapper .category.c-4 {
+  height: 6rem;
+}
+.sign-wrapper .hover-wrapper .category.c-4 p {
+  rotate: 8deg;
+  padding-top: 1rem;
+  text-shadow: #F34DD9 1px 0 10px;
+}
+.sign-wrapper .hover-wrapper .category.c-4:hover p {
+  opacity: 1;
+}
+.sign-wrapper .hover-wrapper .category.c-5 {
+  height: 7rem;
+}
+.sign-wrapper .hover-wrapper .category.c-5 p {
+  rotate: 9deg;
+  padding-top: 1.3rem;
+  text-shadow: #85FC3C 1px 0 10px;
+}
+.sign-wrapper .hover-wrapper .category.c-5:hover p {
+  opacity: 1;
 }
 
 @-webkit-keyframes fadeIn {
