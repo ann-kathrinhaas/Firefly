@@ -121,3 +121,11 @@ setTimeout(function() {
         }, 3000);
     }, 5000);
 }, 7000);
+
+setTimeout(function() {
+    let hoverTexts = document.querySelectorAll('.category');
+
+    hoverTexts.forEach(function(element) {
+        element.classList.add('active');
+    });
+}, 100);

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   background-color: #000000;
   color: #ffffff;
@@ -94,7 +95,7 @@ button:hover {
   background-image: url("../img/btn-start-hover.png");
 }
 
-.sign-wrapper {
+.sign-wrapper .sign {
   height: 80vh;
   margin: 0 auto;
   background-repeat: no-repeat;
@@ -115,11 +116,11 @@ button:hover {
 }
 .sign-wrapper .hover-wrapper {
   height: 80vh;
-  width: 20rem;
+  width: 18rem;
   position: absolute;
   top: 50%;
   left: 60%;
-  transform: translate(-58%, -50%);
+  transform: translate(-52%, -50%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -130,6 +131,10 @@ button:hover {
 .sign-wrapper .hover-wrapper .category {
   width: inherit;
   height: 2rem;
+  display: none;
+}
+.sign-wrapper .hover-wrapper .category.active {
+  display: block;
 }
 .sign-wrapper .hover-wrapper .category:hover {
   cursor: pointer;
@@ -147,6 +152,17 @@ button:hover {
   padding-left: 3.5rem;
   text-shadow: #FF8A00 1px 0 10px;
 }
+.sign-wrapper .hover-wrapper .category.c-1 .small-fireflies {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  z-index: 1;
+  opacity: 1; /* Hinzugefügter Stil für Standard-Sichtbarkeit */
+}
 .sign-wrapper .hover-wrapper .category.c-1:hover p {
   opacity: 1;
 }
@@ -155,7 +171,7 @@ button:hover {
 }
 .sign-wrapper .hover-wrapper .category.c-2 p {
   rotate: 8deg;
-  padding-top: 0.8rem;
+  padding-top: 0.5rem;
   padding-right: 1.5rem;
   text-shadow: #8DF5DC 1px 0 10px;
 }
@@ -167,7 +183,7 @@ button:hover {
 }
 .sign-wrapper .hover-wrapper .category.c-3 p {
   rotate: 8deg;
-  padding-top: 1.5rem;
+  padding-top: 1rem;
   text-shadow: #0894E2 1px 0 10px;
 }
 .sign-wrapper .hover-wrapper .category.c-3:hover p {
@@ -178,7 +194,6 @@ button:hover {
 }
 .sign-wrapper .hover-wrapper .category.c-4 p {
   rotate: 8deg;
-  padding-top: 1rem;
   text-shadow: #F34DD9 1px 0 10px;
 }
 .sign-wrapper .hover-wrapper .category.c-4:hover p {
@@ -189,7 +204,7 @@ button:hover {
 }
 .sign-wrapper .hover-wrapper .category.c-5 p {
   rotate: 9deg;
-  padding-top: 1.3rem;
+  padding-top: 0.5rem;
   text-shadow: #85FC3C 1px 0 10px;
 }
 .sign-wrapper .hover-wrapper .category.c-5:hover p {
