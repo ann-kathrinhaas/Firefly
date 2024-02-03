@@ -53,7 +53,7 @@ setTimeout(function() {
 
 
 function redirectToCategories() {
-    window.location.href = '02_categories.html';
+    window.location.href = 'Kategorien.html';
 }
 
 
