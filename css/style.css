@@ -96,6 +96,7 @@ button:hover {
 
 .sign-wrapper .sign {
   height: 80vh;
+  width: auto;
   margin: 0 auto;
   background-repeat: no-repeat;
   background-size: contain;
@@ -107,7 +108,13 @@ button:hover {
   align-items: center;
   justify-content: center;
 }
-.sign-wrapper img {
+.sign-wrapper .sign.show {
+  opacity: 1;
+}
+.sign-wrapper .sign.hide {
+  opacity: 0;
+}
+.sign-wrapper .sign.sign-dark {
   height: 80vh;
   opacity: 0;
   -webkit-animation: fadeIn 8s ease-in-out forwards 3s;
@@ -126,20 +133,61 @@ button:hover {
   justify-content: flex-start;
   z-index: 1;
   background-color: transparent;
+  margin-top: 4rem;
 }
 .sign-wrapper .hover-wrapper .category {
   width: inherit;
-  height: 2rem;
   opacity: 0;
+}
+.sign-wrapper .hover-wrapper .category.c-1 {
+  height: 4rem;
+}
+.sign-wrapper .hover-wrapper .category.c-1.active:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+.sign-wrapper .hover-wrapper .category.c-2 {
+  height: 5.5rem;
+}
+.sign-wrapper .hover-wrapper .category.c-2.active:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+.sign-wrapper .hover-wrapper .category.c-3 {
+  height: 5.5rem;
+}
+.sign-wrapper .hover-wrapper .category.c-3.active:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+.sign-wrapper .hover-wrapper .category.c-4 {
+  height: 6rem;
+}
+.sign-wrapper .hover-wrapper .category.c-4.active:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+.sign-wrapper .hover-wrapper .category.c-5 {
+  height: 6rem;
+}
+.sign-wrapper .hover-wrapper .category.c-5.active:hover {
+  cursor: pointer;
+  opacity: 1;
 }
 
 @-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
   to {
     opacity: 1;
   }
 }
 
 @keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
   to {
     opacity: 1;
   }
