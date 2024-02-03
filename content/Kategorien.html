@@ -10,39 +10,44 @@
     <link rel="icon" href="../img/favicon.png" type="image/x-icon">
 </head>
 <body>
-    <!-- <video id="videoPlayer" autoplay muted onended="playNextVideo()" src="../videos/Szene_2/Szene2_01.webm" type="video/webm"></video> -->
-
     <video id="videoPlayer" autoplay muted onended="playNextVideo()">
         <source src="../videos/Szene_2/Szene2_01.webm" type="video/webm">
         <source src="../videos/Szene_2/Szene2_02.webm" type="video/webm">
     </video>
 
     <div class="sign-wrapper">
-        <img class="sign" src="../img/sign.png">
+        <video class="sign sign-dark show" autoplay muted loop>
+            <source src="../videos/Szene_2/Szene_2_sign_standard.webm" type="video/webm">
+        </video>
+        <video class="sign sign-orange hide" autoplay muted loop>
+            <source src="../videos/Szene_2/Szene_2_sign_orange.webm" type="video/webm">
+        </video>
+        <video class="sign sign-mint hide" autoplay muted loop>
+            <source src="../videos/Szene_2/Szene_2_sign_mint.webm" type="video/webm">
+        </video>
+        <video class="sign sign-blue hide" autoplay muted loop>
+            <source src="../videos/Szene_2/Szene_2_sign_blue.webm" type="video/webm">
+        </video>
+        <video class="sign sign-pink hide" autoplay muted loop>
+            <source src="../videos/Szene_2/Szene_2_sign_pink.webm" type="video/webm">
+        </video>
+        <video class="sign sign-green hide" autoplay muted loop>
+            <source src="../videos/Szene_2/Szene_2_sign_green.webm" type="video/webm">
+        </video>
         <div class="hover-wrapper">
-            <div class="category c-1">
-                <!-- <p>Leuchtkraft des Moments</p>
-                <video class="small-fireflies orange-fireflies" autoplay muted loop>
-                    <source src="../videos/Szene_2/Szene2_OrangeFireflies.webm" type="video/webm">
-                </video> -->
-            </div>
-            <div class="category c-2">
-                <!-- <p>Gluehwuermchen der Hoffnung</p> -->
-            </div>
-            <div class="category c-3">
-                <!-- <p>Strahlen der Dankbarkeit</p> -->
-            </div>
-            <div class="category c-4">
-                <!-- <p>Lichter des Lachens</p> -->
-            </div>
-            <div class="category c-5">
-                <!-- <p>Strahlen der Verbundenheit</p> -->
-            </div>
+            <div class="category c-1" data-text="Hier geht es um Motivation." onclick="redirectToCategory1()"></div>
+            <div class="category c-2" data-text="Hier geht es um Hoffnung." onclick="redirectToCategory2()"></div>
+            <div class="category c-3" data-text="Hier geht es um Dankbarkeit." onclick="redirectToCategory3()"></div>
+            <div class="category c-4" data-text="Hier kannst du lachen." onclick="redirectToCategory4()"></div>
+            <div class="category c-5" data-text="Hier findest du Worte deiner Mitspieler." onclick="redirectToCategory5()"></div>
         </div>
     </div>
 
     <div class="text-wrapper t-w-2 hide">
         <p id="text-2"></p>
+    </div>
+    <div class="text-wrapper t-w-3 hide">
+        <p id="text-3"></p>
     </div>
 </body>
 </html>
