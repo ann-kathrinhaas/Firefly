@@ -166,113 +166,119 @@ button {
     .category {
       width: inherit;
       height: 2rem;
-      display: none;
+      opacity: 0;
 
-      &.active {
-        display: block;
-      }
+      // &.active {
+      //   &:hover {
+      //     cursor: pointer;
+      //     display: block;
+      //   }
+      // }
 
-      &:hover {
-        cursor: pointer;
-      }
+      // &:hover {
+      //   cursor: pointer;
+      // }
 
-      p {
-        font-size: 1rem;
-        opacity: 0;
-      }
+  
 
-      &.c-1 {
-        height: 4rem;
+    //   .small-fireflies {
+    //     position: fixed;
+    //     z-index: 1; 
 
-        p {
-          rotate: -2deg;
-          text-align: left;
-          padding-left: 3.5rem;   
-          text-shadow: $orange 1px 0 10px;   
-        }
+    //     &.orange-fireflies {
+    //       top: -13.5rem;
+    //       width: unset;
+    //       left: -25rem;
+    //     }
+    //   }
 
-        .small-fireflies {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          z-index: 1;
-          opacity: 1; /* Hinzugefügter Stil für Standard-Sichtbarkeit */
-      }
-      
+    //   p {
+    //     font-size: 1rem;
+    //     opacity: 0;
+    //   }
 
-        &:hover {
-          p {
-            opacity: 1;
-          }
-        }
-      }
+    //   &.c-1 {
+    //     height: 4rem;
 
-      &.c-2 {
-        height: 5rem;
+    //     p {
+    //       rotate: -2deg;
+    //       text-align: left;
+    //       padding-left: 3.5rem;   
+    //       text-shadow: $orange 1px 0 10px;   
+    //     }
 
-        p {
-          rotate: 8deg;
-          padding-top: 0.5rem;
-          padding-right: 1.5rem;
-          text-shadow: $mint 1px 0 10px; 
-        }
+    //     &:hover {
+    //       opacity: 1;
+    //     }
+    //   }
 
-        &:hover {
-          p {
-            opacity: 1;
-          }
-        }
-      }
+    //   &.c-2 {
+    //     height: 5rem;
 
-      &.c-3 {
-        height: 6.5rem;
+    //     p {
+    //       rotate: 8deg;
+    //       padding-top: 0.5rem;
+    //       padding-right: 1.5rem;
+    //       text-shadow: $mint 1px 0 10px; 
+    //     }
 
-        p {
-          rotate: 8deg;
-          padding-top: 1rem;
-          text-shadow: $blue 1px 0 10px; 
-        }
+    //     &:hover {
+    //       opacity: 1;
+    //     }
+    //   }
 
-        &:hover {
-          p {
-            opacity: 1;
-          }
-        }
-      }
+    //   &.c-3 {
+    //     height: 6.5rem;
 
-      &.c-4 {
-        height: 6rem;
+    //     p {
+    //       rotate: 8deg;
+    //       padding-top: 1rem;
+    //       text-shadow: $blue 1px 0 10px; 
+    //     }
 
-        p {
-          rotate: 8deg;
-          text-shadow: $pink 1px 0 10px; 
-        }
+    //     &:hover {
+    //       opacity: 1;
+    //     }
+    //   }
 
-        &:hover {
-          p {
-            opacity: 1;
-          }
-        }
-      }
+    //   &.c-4 {
+    //     height: 6rem;
 
-      &.c-5 {
-        height: 7rem;
+    //     p {
+    //       rotate: 8deg;
+    //       text-shadow: $pink 1px 0 10px; 
+    //     }
 
-        p {
-          rotate: 9deg;
-          padding-top: 0.5rem;
-          text-shadow: $green 1px 0 10px; 
-        }
+    //     &:hover {
+    //       opacity: 1;
+    //     }
+    //   }
 
-        &:hover {
-          p {
-            opacity: 1;
-          }
-        }
-      }
+    //   &.c-5 {
+    //     height: 7rem;
+
+    //     p {
+    //       rotate: 9deg;
+    //       padding-top: 0.5rem;
+    //       text-shadow: $green 1px 0 10px; 
+    //     }
+
+    //     &:hover {
+    //       p {
+    //         opacity: 1;
+    //       }
+    //     }
+    //   }
+
+    //   &.active {
+    //     &:hover {
+    //       cursor: pointer !important;
+    //       opacity: 1;
+    //     }
+    //   }
+    // }
+
+    
     }
   }
 } 

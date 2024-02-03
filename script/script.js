@@ -122,10 +122,10 @@ setTimeout(function() {
     }, 5000);
 }, 7000);
 
-setTimeout(function() {
-    let hoverTexts = document.querySelectorAll('.category');
+// setTimeout(function() {
+//     let hoverCategory = document.querySelectorAll('.category');
 
-    hoverTexts.forEach(function(element) {
-        element.classList.add('active');
-    });
-}, 100);
+//     hoverCategory.forEach(function(element) {
+//         element.classList.add('active');
+//     });
+// }, 1000);
