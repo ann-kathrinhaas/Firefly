@@ -9,7 +9,24 @@
     <script src="../script/script.js" defer></script>
     <link rel="icon" href="../img/favicon.png" type="image/x-icon">
 </head>
-<body>
+<body class="green">
+    <div class="guess-letters" id="word"></div>
 
+    <div class="flex-container">
+        <div class="item w-70" id="letters">
+            <div class="letter-row" id="row1"></div>
+            <div class="letter-row" id="row2"></div>
+            <div class="letter-row" id="row3"></div>
+        </div> 
+        <div class="item w-30">
+            <img id="hangman-image" src="">
+        </div>
+    </div>
+    
+
+    <div id="remaining-tries">Versuche übrig: 4</div> <!-- Initialer Zählerwert -->
+    
+    <button id="new-game-button">Neues Spiel</button>
+    <div id="try-again-text">Versuchs nochmal</div>
 </body>
 </html>

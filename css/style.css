@@ -191,4 +191,102 @@ button:hover {
   to {
     opacity: 1;
   }
+}
+/* Hangman game */
+.guess-letters {
+  position: relative;
+  top: 8rem;
+}
+
+.flex-container {
+  display: flex;
+  width: 90vw;
+  margin: 0 auto;
+  position: relative;
+  top: 50vh;
+}
+.flex-container .item.w-70 {
+  width: 70%;
+}
+.flex-container .item.w-70 .letter-row {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+.flex-container .item.w-30 {
+  width: 30%;
+}
+
+.letter {
+  display: inline-block;
+  margin: 0.5rem;
+  cursor: pointer;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  border: none;
+}
+
+#remaining-tries {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+#hangman-image {
+  max-width: 100%;
+  height: auto;
+  /* display: none; */
+}
+
+#new-game-button {
+  display: none;
+  margin-top: 20px;
+}
+
+#try-again-text {
+  display: none;
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+.orange .letter {
+  background: linear-gradient(90deg, rgb(255, 138, 0) 0%, rgb(159, 103, 37) 50%, rgb(103, 59, 7) 100%);
+}
+.orange .letter:hover {
+  box-shadow: 0 0 30px #FF8A00;
+}
+
+.mint .letter {
+  background: linear-gradient(90deg, rgb(101, 255, 220) 0%, rgb(61, 139, 121) 50%, rgb(33, 58, 52) 100%);
+}
+.mint .letter:hover {
+  box-shadow: 0 0 30px #8DF5DC;
+}
+
+.blue .letter {
+  background: linear-gradient(90deg, rgb(0, 165, 255) 0%, rgb(6, 107, 163) 50%, rgb(23, 63, 85) 100%);
+}
+.blue .letter:hover {
+  box-shadow: 0 0 30px #0894E2;
+}
+
+.pink .letter {
+  background: linear-gradient(90deg, rgb(254, 102, 230) 0%, rgb(187, 80, 170) 50%, rgb(78, 15, 68) 100%);
+}
+.pink .letter:hover {
+  box-shadow: 0 0 30px #F34DD9;
+}
+
+.green .letter {
+  background: linear-gradient(90deg, rgb(133, 252, 60) 0%, rgb(93, 154, 56) 50%, rgb(40, 65, 24) 100%);
+}
+.green .letter:hover {
+  box-shadow: 0 0 30px #85FC3C;
+}
+
+.orange .letter.used, .mint .letter.used, .blue .letter.used, .pink .letter.used, .green .letter.used {
+  background-color: #929292;
+  pointer-events: none;
 }/*# sourceMappingURL=style.css.map */
