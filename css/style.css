@@ -287,6 +287,6 @@ button:hover {
 }
 
 .orange .letter.used, .mint .letter.used, .blue .letter.used, .pink .letter.used, .green .letter.used {
-  background-color: #929292;
+  background: linear-gradient(90deg, rgb(185, 185, 185) 0%, rgb(150, 150, 150) 50%, rgb(80, 79, 79) 100%);
   pointer-events: none;
 }/*# sourceMappingURL=style.css.map */
