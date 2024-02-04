@@ -38,6 +38,7 @@ body {
   margin: 0;
   overflow: hidden;
   background-image: url("../img/stars.png");
+  background-image: url("../img/bg-lights.png");
 }
 
 p {
@@ -313,12 +314,17 @@ button {
 #new-game-button {
   display: none;
   margin-top: 20px;
+  animation: fadeIn 10s ease-out;
+  margin: 0 auto;
 }
 
 #try-again-text {
   display: none;
-  font-size: 24px;
-  margin-top: 20px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 1);
+  font-size: 2rem;
+  position: relative;
+  top: -20rem;
+  animation: fadeIn 10s ease-out;
 }
 
 // Orange – Leuchtkraft des Moments

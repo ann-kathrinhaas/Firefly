@@ -338,6 +338,7 @@ let gameInProgress = true;
         const hangmanImage = document.getElementById('hangman-image');
         const newGameButton = document.getElementById('new-game-button');
         const tryAgainText = document.getElementById('try-again-text');
+        const letters = document.getElementById('letters');
 
         function updateWordDisplay() {
             wordElement.innerHTML = guessedSentence.map(char => (char === ' ' ? '&nbsp;' : char)).join(' ');
@@ -383,6 +384,8 @@ let gameInProgress = true;
                     newGameButton.style.display = 'block';
                     tryAgainText.style.display = 'block';
                     hangmanImage.style.display = 'block';
+                    wordElement.style.display = 'none';
+                    letters.style.opacity = 0; // Buchstaben sollen auch ausgeblendet werden
                     //alert('Verloren! Der Satz lautet: ' + sentenceToGuess);
                 }
             }
@@ -452,7 +455,8 @@ let gameInProgress = true;
         }
 
         newGameButton.addEventListener('click', () => {
-            location.reload(); // Lädt die Seite neu, um ein neues Spiel zu starten
+            // location.reload(); // Lädt die Seite neu, um ein neues Spiel zu starten
+            window.location.href = 'Kategorien.html'; // hier noch die Anfangsanimation anpassen
         });
         
         updateWordDisplay();
