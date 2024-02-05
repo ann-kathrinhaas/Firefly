@@ -20,6 +20,7 @@ $grey-gradient: linear-gradient(90deg, rgba(185,185,185,1) 0%, rgba(150,150,150,
 $bg-color: $black;
 
 $main-font-color: $white;
+$main-font-family: Koulen;
 
 $border-white: rgba(255, 255, 255, 0.1);
 
@@ -31,7 +32,7 @@ body {
   color: $main-font-color;
   text-align: center;
   color: white;
-  font-family: Koulen;
+  font-family: $main-font-family;
   text-transform: uppercase;
   font-weight: 400;
   word-wrap: break-word;
@@ -394,10 +395,9 @@ button {
 }
 
 .message-wrapper {
-  position: fixed;
-  bottom: 7vh;
-  // left: 50%;
-  // transform: translate(-50%, 0);
+  position: relative;
+  top: 12vh;
+  margin: 0 auto;
   width: 60rem;
   height: 11rem;
   transition: opacity 1.5s ease-out;
@@ -412,5 +412,40 @@ button {
   
   &.show {
     opacity: 1;
+  }
+
+  form {
+    font-size: 2rem;
+    width: 60rem;
+    height: 11rem;
+    margin: 0 auto;
+    position: relative;
+    top: 1.5rem;
+
+    textarea {
+      resize: none;
+      margin: 0 auto;
+      background: transparent;
+      border: none;
+      color: $main-font-color;
+      font-family: $main-font-family;
+      width: 41rem;
+      height: 8rem;
+      text-align: center;
+      font-size: 1.5rem;
+
+      &:focus {
+        outline: none;
+      }
+      
+    }
+  }
+}
+
+.btn-wrapper {
+  &.send-message {
+    &:hover {
+      cursor: not-allowed !important;
+    }
   }
 }

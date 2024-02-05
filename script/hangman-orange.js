@@ -69,7 +69,7 @@ function checkLetter(letter) {
             // alert('Gewonnen! Der Satz lautet: ' + sentenceToGuess)
 
             setTimeout(function () {
-                window.location.href = "../content/Botschaften.html";
+                window.location.href = "Botschaften.html";
             }, 3000);
         }
     } else {
@@ -108,7 +108,7 @@ function markIncorrectLetter(letter) {
         hangmanImageIndex++; // Erhöhe den Index bei einem Fehlversuch
         const maxImageIndex = 4; // Ändern Sie dies entsprechend der Anzahl Ihrer Hangman-Bilder
         if (hangmanImageIndex <= maxImageIndex) {
-            hangmanImage.src = `../img/hangman-orange/hangman${hangmanImageIndex}.png`;
+            hangmanImage.src = `../../img/hangman-orange/hangman${hangmanImageIndex}.png`;
         }
     }
 
@@ -117,7 +117,7 @@ function markIncorrectLetter(letter) {
         gameInProgress = false;
         newGameButton.style.display = 'block'; // Zeigen Sie den Neustart-Button an
         tryAgainText.style.display = 'block';
-        hangmanImage.src = `../img/hangman-orange/hangman${hangmanImageIndex}.png`; // Aktualisieren des Bilds auf das letzte Hangman-Bild
+        hangmanImage.src = `../../img/hangman-orange/hangman${hangmanImageIndex}.png`; // Aktualisieren des Bilds auf das letzte Hangman-Bild
         // alert('Verloren! Der Satz lautet: ' + sentenceToGuess); // Wir haben die alert-Funktion auskommentiert, da wir den Neustart-Button verwenden
     }
 }

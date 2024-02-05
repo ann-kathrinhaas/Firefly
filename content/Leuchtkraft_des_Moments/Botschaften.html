@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIREFLY</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <!-- <script src="../script/script.js" defer></script> -->
+    <script src="../../script/message.js" defer></script>
+    <link rel="icon" href="../../img/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <video id="videoPlayer" autoplay muted onended="playNextVideo()">
+        <source src="../../videos/Szene_2/Szene2_01.webm" type="video/webm">
+        <source src="../../videos/Szene_2/Szene2_02.webm" type="video/webm">
+    </video>
+
+    <div class="text-wrapper t-w-4 hide">
+        <p id="text-4"></p>
+    </div>
+
+    <div class="message-wrapper hide">
+       <form action="#" method="post">
+           <textarea id="botschaft" name="nachricht" maxlength="100" placeholder="Light up with your words" required></textarea>
+        </div>
+       </form>
+    </div>
+
+    <div class="btn-wrapper send-message hide">
+        <button  id="sendButton" type="button" value="Senden" class="btn-start" onclick="">Light up</button> <!-- Button umbenennen-->
+    </div>
+</body>
+</html>

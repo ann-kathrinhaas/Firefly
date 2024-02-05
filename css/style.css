@@ -302,8 +302,9 @@ button:hover {
 }
 
 .message-wrapper {
-  position: fixed;
-  bottom: 7vh;
+  position: relative;
+  top: 12vh;
+  margin: 0 auto;
   width: 60rem;
   height: 11rem;
   transition: opacity 1.5s ease-out;
@@ -317,4 +318,31 @@ button:hover {
 }
 .message-wrapper.show {
   opacity: 1;
+}
+.message-wrapper form {
+  font-size: 2rem;
+  width: 60rem;
+  height: 11rem;
+  margin: 0 auto;
+  position: relative;
+  top: 1.5rem;
+}
+.message-wrapper form textarea {
+  resize: none;
+  margin: 0 auto;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-family: Koulen;
+  width: 41rem;
+  height: 8rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+.message-wrapper form textarea:focus {
+  outline: none;
+}
+
+.btn-wrapper.send-message:hover {
+  cursor: not-allowed !important;
 }/*# sourceMappingURL=style.css.map */

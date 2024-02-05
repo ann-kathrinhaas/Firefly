@@ -227,7 +227,7 @@ function changeSign() {
 function redirectToCategory(index) {
     switch (index) {
         case 1:
-            window.location.href = "Leuchtkraft_des_Moments.html";
+            window.location.href = "Leuchtkraft_des_Moments/Leuchtkraft_des_Moments.html";
             break;
         case 2:
             window.location.href = "Gluehwuermchen_der_Hoffnung.html";
