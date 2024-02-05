@@ -1,3 +1,5 @@
+// JS für Startanimation
+
 setTimeout(function () {
     let textWrapper = document.querySelector('.t-w-1');
 
@@ -242,14 +244,9 @@ function redirectToCategory(index) {
     }
 }
 
-// Iteriert über Elemente mit der Klasse "category" und fügt jedem div ein onclick hinzu 
-// let categories = document.querySelectorAll('.category');
-// categories.forEach(function (category, index) {
-//     category.setAttribute('onclick', 'redirectToCategory(' + (index + 1) + ')');
-// });
-
 // Über Kategorien (Schild) kann erst nach 30s gehovert werden, da dann der Text von Firefly weg ist
 setTimeout(function () {
+    // Iteriert über Elemente mit der Klasse "category" und fügt jedem div ein onclick hinzu 
     let categories = document.querySelectorAll('.category');
     categories.forEach(function (category, index) {
         category.setAttribute('onclick', 'redirectToCategory(' + (index + 1) + ')');
@@ -265,20 +262,8 @@ setTimeout(function () {
         });
     });
 
-    // test2();
     changeSign();
 }, 30000);
-
-// function test () {
-//     let categories = document.querySelectorAll('.category');
-//     categories.forEach(function (category, index) {
-//         category.setAttribute('onclick', 'redirectToCategory(' + (index + 1) + ')');
-//     });
-// }
-
-// function test2() {
-//     document.getElementsByClassName('category').addEventListener('click', redirectToCategory());
-// }
 
 // Erklärung der Kategorien
 setTimeout(function () {

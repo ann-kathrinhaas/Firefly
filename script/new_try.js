@@ -1,3 +1,5 @@
+// JS für die Kategorienauswahl bei einen neuen Versuch
+
 function playNextVideo() {
     const videoSources = [
         "../videos/Szene_2/Szene2_02.webm"
