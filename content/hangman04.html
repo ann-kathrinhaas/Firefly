@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hangman Spiel</title>
-    <style>
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- <style>
         body {
             display: flex;
             flex-direction: column;
@@ -58,7 +59,7 @@
             font-size: 24px;
             margin-top: 20px;
         }
-    </style>
+    </style> -->
 </head>
 
 <body>
@@ -171,7 +172,7 @@
                 hangmanImageIndex++; // Erhöhe den Index bei einem Fehlversuch
                 const maxImageIndex = 4; // Ändern Sie dies entsprechend der Anzahl Ihrer Hangman-Bilder
                 if (hangmanImageIndex <= maxImageIndex) {
-                    hangmanImage.src = `images/hangman${hangmanImageIndex}.png`;
+                    hangmanImage.src = `../img/hangman-orange/hangman${hangmanImageIndex}.png`;
                 }
             }
 
@@ -179,7 +180,7 @@
                 gameInProgress = false;
                 newGameButton.style.display = 'block'; // Zeigen Sie den Neustart-Button an
                 tryAgainText.style.display = 'block';
-                hangmanImage.src = `images/hangman${maxImageIndex}.png`; // Aktualisieren des Bilds auf das letzte Hangman-Bild
+                hangmanImage.src = `../img/hangman-orange/hangman${hangmanImageIndex}.png`; // Aktualisieren des Bilds auf das letzte Hangman-Bild
                 // alert('Verloren! Der Satz lautet: ' + sentenceToGuess); // Wir haben die alert-Funktion auskommentiert, da wir den Neustart-Button verwenden
             }
         }

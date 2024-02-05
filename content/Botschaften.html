@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIREFLY</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../script/script.js" defer></script>
+    <link rel="icon" href="../img/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <!-- <video autoplay muted src="../videos/Szene_1/Szene_1_ver02.webm" type="video/webm"></video> -->
+
+    <video id="videoPlayer" autoplay muted onended="playNextVideo()">
+        <source src="../videos/Szene_2/Szene2_01.webm" type="video/webm">
+        <source src="../videos/Szene_2/Szene2_02.webm" type="video/webm">
+    </video>
+
+    <div class="text-wrapper t-w-4 hide">
+        <p id="text-4"></p>
+    </div>
+
+    <div class="message-wrapper hide">
+       <form action="">
+           <input type="text" placeholder="Light up with your words"> <!-- Placeholder umbenennen-->
+       </form>
+    </div>
+
+    <div class="btn-wrapper hide">
+        <button class="btn-start" onclick="">Light up</button> <!-- Button umbenennen-->
+    </div>
+</body>
+</html>

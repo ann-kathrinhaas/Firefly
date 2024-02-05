@@ -1,68 +1,3 @@
-setTimeout(function () {
-    let textWrapper = document.querySelector('.t-w-1');
-
-    setTimeout(function () {
-        textWrapper.classList.remove('hide');
-        textWrapper.classList.add('show');
-
-        setTimeout(function () {
-            let i = 0;
-            let texts = [
-                'Huch, wer bist du denn?',
-                'Sieht so aus, als haettest du dich verlaufen.',
-                'Lass mich dir helfen, deinen Weg zu finden.',
-                'Komm mit ...'
-            ];
-
-            let speed = 50;
-            let currentIndex = 0;
-
-            function typeWriter() {
-                if (i < texts[currentIndex].length) {
-                    document.getElementById("text-1").innerHTML += texts[currentIndex].charAt(i);
-                    i++;
-                    setTimeout(typeWriter, speed);
-                } else if (currentIndex < texts.length - 1) {
-                    setTimeout(function () {
-                        i = 0;
-                        currentIndex++;
-                        document.getElementById("text-1").innerHTML = '';
-                        typeWriter();
-                    }, 2000);
-                } else {
-                    setTimeout(function () {
-                        textWrapper.classList.remove('show');
-                        textWrapper.classList.add('hide');
-                    }, 3000);
-                }
-            }
-
-            typeWriter();
-        }, 3000);
-    }, 5000);
-}, 7000);
-
-
-setTimeout(function () {
-    let btnWrapper = document.querySelector('.btn-wrapper');
-    setTimeout(function () {
-        btnWrapper.classList.remove('hide');
-        btnWrapper.classList.add('show');
-    }, 5000);
-}, 30000);
-
-
-function redirectToCategories() {
-    window.location.href = 'Kategorien.html';
-}
-
-
-function playNextVideo() {
-    document.getElementById('videoPlayer').src = '../videos/Szene_2/Szene2_02.webm';
-    document.getElementById('videoPlayer').play();
-}
-
-
 function playNextVideo() {
     const videoSources = [
         "../videos/Szene_2/Szene2_02.webm"
@@ -78,7 +13,6 @@ function playNextVideo() {
     videoPlayer.play();
 }
 
-
 setTimeout(function () {
     let textWrapper = document.querySelector('.t-w-2');
 
@@ -89,9 +23,9 @@ setTimeout(function () {
         setTimeout(function () {
             let i = 0;
             let texts = [
-                'Da bist du ja wieder.',
-                'Schau mal, hier kannst du einen Pfad aussuchen.',
-                'Welche Richtung moechtest du einschlagen?'
+                'Schoen, dass du wieder da bist.',
+                'Vielleicht finden wir jetzt deinen richtigen Weg.',
+                'Welche Richtung moechtest du diesmal einschlagen?'
             ];
 
             let speed = 50;
@@ -131,7 +65,7 @@ setTimeout(function () {
     });
 
     changeSign();
-    // redirectToCategory();
+    redirectToCategory();
 }, 30000);
 
 
@@ -224,36 +158,32 @@ function changeSign() {
 // Auswahl einer Kategorie -> Weiterleitung zum jeweiligen Spiel
 function redirectToCategory(index) {
     switch (index) {
-        case 1:
-            window.location.href = "Leuchtkraft_des_Moments.html";
-            break;
-        case 2:
-            window.location.href = "Gluehwuermchen_der_Hoffnung.html";
-            break;
-        case 3:
-            window.location.href = "Strahlen_der_Dankbarkeit.html";
-            break;
-        case 4:
-            window.location.href = "Lichter_des_Lachens.html";
-            break;
-        case 5:
-            window.location.href = "Strahlen_der_Verbundenheit.html";
-            break;
+      case 1:
+        window.location.href = "Leuchtkraft_des_Moments.html";
+        break;
+      case 2:
+        window.location.href = "Gluehwuermchen_der_Hoffnung.html";
+        break;
+      case 3:
+        window.location.href = "Strahlen_der_Dankbarkeit.html";
+        break;
+      case 4:
+        window.location.href = "Lichter_des_Lachens.html";
+        break;
+      case 5:
+        window.location.href = "Strahlen_der_Verbundenheit.html";
+        break;
     }
 }
 
 // Iteriert über Elemente mit der Klasse "category" und fügt jedem div ein onclick hinzu 
-// let categories = document.querySelectorAll('.category');
-// categories.forEach(function (category, index) {
-//     category.setAttribute('onclick', 'redirectToCategory(' + (index + 1) + ')');
-// });
+let categories = document.querySelectorAll('.category');
+categories.forEach(function(category, index) {
+  category.setAttribute('onclick', 'redirectToCategory(' + (index + 1) + ')');
+});
 
-// Über Kategorien (Schild) kann erst nach 30s gehovert werden, da dann der Text von Firefly weg ist
+// Über Kategorien (Schild) kann erst nach 25s gehovert werden
 setTimeout(function () {
-    let categories = document.querySelectorAll('.category');
-    categories.forEach(function (category, index) {
-        category.setAttribute('onclick', 'redirectToCategory(' + (index + 1) + ')');
-    });
     document.querySelectorAll('.category').forEach(function (category) {
         category.addEventListener('mouseenter', function () {
             let text = getCategoryText(category.classList);
@@ -265,20 +195,8 @@ setTimeout(function () {
         });
     });
 
-    // test2();
     changeSign();
 }, 30000);
-
-// function test () {
-//     let categories = document.querySelectorAll('.category');
-//     categories.forEach(function (category, index) {
-//         category.setAttribute('onclick', 'redirectToCategory(' + (index + 1) + ')');
-//     });
-// }
-
-// function test2() {
-//     document.getElementsByClassName('category').addEventListener('click', redirectToCategory());
-// }
 
 // Erklärung der Kategorien
 setTimeout(function () {
