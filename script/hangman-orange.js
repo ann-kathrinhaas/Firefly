@@ -3,27 +3,35 @@ let hangmanImageIndex = 0;
 
 // Vordefinierte Sätze, die der Spieler erraten kann
 const sentencesToGuess = [
-    "Das ist ein einfacher Satz",
-    "Programmieren macht Spaß",
-    "OpenAI ist großartig",
-    "Javascript ist eine Programmiersprache",
-    "Hangman ist ein lustiges Spiel",
-    "Computer sind leistungsstark",
-    "Ich liebe das Programmieren",
-    "Spiele machen Freude",
-    "Wörter raten ist herausfordernd",
-    "Entwicklung ist kreativ"
+    // "Erfolg ist die Summe kleiner Anstrengungen, die jeden Tag unternommen werden.",
+    // "Der Weg zum Erfolg beginnt damit, den ersten Schritt zu tun.",
+    // "Du musst das Unmoegliche versuchen, um das Moegliche zu erreichen.",
+    // "Erfolg ist keine Glueckssache, sondern das Ergebnis harter Arbeit und Ausdauer.",
+    // "Die Motivation kommt oft erst, wenn du die ersten Schritte unternimmst.",
+    // "Man ist nie zu klein, um großartig zu sein.",
+    // "Motivation ist das, was dich starten laesst. Gewohnheit ist, was dich am Ball haelt.",
+    // "Die groesste Motivation kommt aus dem Inneren. Finde deine Leidenschaft und lass sie dich antreiben.",
+    // "Gib niemals auf. Erfolg beginnt im Kopf.",
+    "Lass dir dein Leuchten nicht nehmen, nur weil es andere blendet.",
+    "Test",
+    "Cindy"
 ];
 
 // Zufällig einen Satz auswählen
 const randomIndex = Math.floor(Math.random() * sentencesToGuess.length);
 const sentenceToGuess = sentencesToGuess[randomIndex].toUpperCase();
 const sentenceArray = sentenceToGuess.split('');
+// const guessedSentence = sentenceArray.map(char => (char === ' ' ? ' ' : '_'));
 const guessedSentence = sentenceArray.map(char => (char === ' ' ? ' ' : '_'));
+for (let i = 0; i < guessedSentence.length; i++) { // Fügt . und , schon ein
+    if (/[.,]/.test(sentenceArray[i])) {
+        guessedSentence[i] = sentenceArray[i];
+    }
+}
 const incorrectLetters = []; // Falsch ausgewählte Buchstaben
 const correctLetters = []; // Richtige Buchstaben
 let remainingTries = 4; // Gesamtzahl der Versuche
-
+3
 const wordElement = document.getElementById('word');
 const row1Element = document.getElementById('row1');
 const row2Element = document.getElementById('row2');
@@ -36,6 +44,39 @@ const letters = document.getElementById('letters');
 
 function updateWordDisplay() {
     wordElement.innerHTML = guessedSentence.map(char => (char === ' ' ? '&nbsp;' : char)).join(' ');
+}
+
+// Zeigt nach richtigem Erraten den Satz nochmal komplett an
+function displayFullSentence() {
+    const flexContainer = document.querySelector('.flex-container');
+    flexContainer.style.display = 'none';
+
+    const wordDiv = document.getElementById('word');
+    wordDiv.style.transition = 'text-shadow 2s ease-in-out, opacity 1s ease-in-out';
+    wordDiv.style.textShadow = '0 0 30px rgba(255, 255, 255, 1)';
+    wordDiv.style.opacity = 1;
+}
+
+// Blendet den kompletten Satz wieder aus
+function hideFullSentence() {
+    const wordDiv = document.getElementById('word');
+    wordDiv.style.transition = 'text-shadow 2s ease-in-out, opacity 1s ease-in-out';
+    wordDiv.style.textShadow = '0 0 30px rgba(255, 255, 255, 1)';
+    wordDiv.style.opacity = 0;
+}
+
+function playNextVideo() {
+    videoPlayer.src = '../../videos/Ende/Happy_KurzFireflySlow.webm';
+
+    videoPlayer.addEventListener('ended', function () { // Wenn das erste Video zu Ende ist, wird das zweite geladen
+        videoPlayer.src = '../../videos/Botschaften/White/LinkesFirefly_Wiggle_Lastscene.webm';
+
+        videoPlayer.addEventListener('loadeddata', function () {
+            videoPlayer.play(); // Zweites Video abspielen
+        });
+    });
+
+    videoPlayer.play(); // Erstes Video abspielen
 }
 
 function checkLetter(letter) {
@@ -64,14 +105,101 @@ function checkLetter(letter) {
         markCorrectLetter(letter);
         if (!guessedSentence.includes('_')) {
             gameInProgress = false;
-            // newGameButton.style.display = 'block';
             tryAgainText.style.display = 'none';
-            // alert('Gewonnen! Der Satz lautet: ' + sentenceToGuess)
+
+            const videoPlayer = document.getElementById('videoPlayer');
 
             setTimeout(function () {
-                window.location.href = "Botschaften.html";
-            }, 3000);
+                displayFullSentence(); // Zeigt den erratenen Satz nochmal an
+                playNextVideo();
+
+                // Text-wrapper erstellen
+                let textWrapper = document.createElement('div');
+                textWrapper.classList.add('text-wrapper', 't-w-4', 'hide');
+
+                let paragraph = document.createElement('p');
+                paragraph.id = 'text-4';
+
+                textWrapper.appendChild(paragraph);
+
+                document.body.appendChild(textWrapper);
+
+                setTimeout(function () {
+                    let textWrapper = document.querySelector('.t-w-4');
+
+                    setTimeout(function () {
+                        textWrapper.classList.remove('hide');
+                        textWrapper.classList.add('show');
+
+                        setTimeout(function () {
+                            let i = 0;
+                            let texts = [
+                                'Du hast den Weg gefunden.',
+                                'Jetzt kannst auch du ein Licht fuer jemanden dalassen.',
+                            ];
+
+                            let speed = 50;
+                            let currentIndex = 0;
+
+                            function typeWriter() {
+                                if (i < texts[currentIndex].length) {
+                                    document.getElementById("text-4").innerHTML += texts[currentIndex].charAt(i);
+                                    i++;
+                                    setTimeout(typeWriter, speed);
+                                } else if (currentIndex < texts.length - 1) {
+                                    setTimeout(function () {
+                                        i = 0;
+                                        currentIndex++;
+                                        document.getElementById("text-4").innerHTML = '';
+                                        typeWriter();
+                                    }, 2000);
+                                } else {
+                                    setTimeout(function () {
+                                        textWrapper.classList.remove('show');
+                                        textWrapper.classList.add('hide');
+                                        hideFullSentence();
+
+                                        let videoPlayer = document.getElementById('videoPlayer'); // Wiggle Video ausblenden
+                                        if (videoPlayer) {
+                                            videoPlayer.parentNode.removeChild(videoPlayer);
+                                        }
+
+                                        // Video für Rausfliegen
+                                        let videoPlayer3 = document.createElement('video');
+                                        videoPlayer3.id = 'videoPlayer3';
+                                        videoPlayer3.autoplay = true;
+                                        videoPlayer3.muted = true;
+
+                                        let source3 = document.createElement('source');
+                                        source3.src = '../../videos/Ende/LinkesFirefly_3Path_Lastscene.webm'; // Passe den Pfad entsprechend an
+                                        source3.type = 'video/webm';
+
+                                        videoPlayer3.appendChild(source3);
+
+                                        document.body.appendChild(videoPlayer3);
+
+                                        videoPlayer3.addEventListener('ended', function() { // Wenn Firefly rausgeflogen ist -> Weiterleitung zu Botschaften
+                                            // window.location.href = "Botschaften.html";
+                                            setTimeout(function () {
+                                                window.location.href = "Botschaften.html";
+                                            }, 3000);
+                                        });
+
+                                    }, 3000);
+                                }
+                            }
+
+                            typeWriter();
+                        }, 3000);
+                    }, 5000);
+                }, 7000);
+
+        
+            }, 2000);
         }
+
+
+
     } else {
         incorrectLetters.push(letter);
         markIncorrectLetter(letter);
@@ -83,14 +211,14 @@ function checkLetter(letter) {
             // tryAgainText.style.display = 'block';
             hangmanImage.style.display = 'block';
             wordElement.style.display = 'none';
-            letters.style.opacity =  0;
+            letters.style.opacity = 0;
             //alert('Verloren! Der Satz lautet: ' + sentenceToGuess);
             setTimeout(function () {
                 hangmanImage.style.display = 'none'; // Fade hinzufügen
             }, 1000);
 
             setTimeout(function () {
-                window.location.href = "../content/Game_Over.html";
+                window.location.href = "/content/Game_Over.html";
             }, 3000);
         }
     }
@@ -167,104 +295,3 @@ newGameButton.addEventListener('click', () => {
 
 updateWordDisplay();
 
-
-
-
-// Richtig erraten -> Botschaften verfassen
-
-// setTimeout(function () { // Geht nicht
-//     let textWrapper = document.querySelector('.t-w-4');
-
-//     setTimeout(function () {
-//         textWrapper.classList.remove('hide');
-//         textWrapper.classList.add('show');
-
-//         setTimeout(function () {
-//             let i = 0;
-//             let texts = [
-//                 'Du hast den Weg gefunden.',
-//                 'jetzt kannst auch du ein licht fuer jemanden dalassen.',
-//             ];
-
-//             let speed = 50;
-//             let currentIndex = 0;
-
-//             function typeWriter() {
-//                 if (i < texts[currentIndex].length) {
-//                     document.getElementById("text-4").innerHTML += texts[currentIndex].charAt(i);
-//                     i++;
-//                     setTimeout(typeWriter, speed);
-//                 } else if (currentIndex < texts.length - 1) {
-//                     setTimeout(function () {
-//                         i = 0;
-//                         currentIndex++;
-//                         document.getElementById("text-4").innerHTML = '';
-//                         typeWriter();
-//                     }, 2000);
-//                 } else {
-//                     setTimeout(function () {
-//                         textWrapper.classList.remove('show');
-//                         textWrapper.classList.add('hide');
-//                     }, 3000);
-//                 }
-//             }
-
-//             typeWriter();
-//         }, 3000);
-//     }, 5000);
-// }, 7000);
-
-//  Text, wenn man es nicht geschafft hat
-// function displayTextGameOver (){
-//     setTimeout(function () {
-//         let textWrapper = document.querySelector('.t-w-5');
-    
-//         setTimeout(function () {
-//             textWrapper.classList.remove('hide');
-//             textWrapper.classList.add('show');
-    
-//             setTimeout(function () {
-//                 let i = 0;
-//                 let texts = [
-//                     'Schade, du hast es leider nicht geschafft.',
-//                     'Versuch es doch noch einmal.',
-//                 ];
-    
-//                 let speed = 50;
-//                 let currentIndex = 0;
-    
-//                 function typeWriter() {
-//                     if (i < texts[currentIndex].length) {
-//                         document.getElementById("text-5").innerHTML += texts[currentIndex].charAt(i);
-//                         i++;
-//                         setTimeout(typeWriter, speed);
-//                     } else if (currentIndex < texts.length - 1) {
-//                         setTimeout(function () {
-//                             i = 0;
-//                             currentIndex++;
-//                             document.getElementById("text-5").innerHTML = '';
-//                             typeWriter();
-//                         }, 2000);
-//                     } else {
-//                         setTimeout(function () {
-//                             textWrapper.classList.remove('show');
-//                             textWrapper.classList.add('hide');
-//                         }, 3000);
-//                     }
-//                 }
-    
-//                 typeWriter();
-//             }, 3000);
-//         }, 5000);
-//     }, 7000);
-// }
-
-
-
-// setTimeout(function () {
-//     let messageWrapper = document.querySelector('.message-wrapper');
-//     setTimeout(function () {
-//         messageWrapper.classList.remove('hide');
-//         messageWrapper.classList.add('show');
-//     }, 5000);
-// }, 7000);

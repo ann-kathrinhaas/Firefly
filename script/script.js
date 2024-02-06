@@ -59,13 +59,13 @@ function redirectToCategories() {
 }
 
 
-function playNextVideo() {
-    document.getElementById('videoPlayer').src = '../videos/Szene_2/Szene2_02.webm';
-    document.getElementById('videoPlayer').play();
-}
+// function playNextVideo1() {
+//     document.getElementById('videoPlayer').src = '../videos/Szene_2/Szene2_02.webm';
+//     document.getElementById('videoPlayer').play();
+// }
 
 
-function playNextVideo() {
+function playNextVideo1() {
     const videoSources = [
         "../videos/Szene_2/Szene2_02.webm"
     ];

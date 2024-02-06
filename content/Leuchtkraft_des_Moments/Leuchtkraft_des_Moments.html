@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +11,14 @@
     <script src="../../script/hangman-orange.js" defer></script>
     <link rel="icon" href="../img/favicon.png" type="image/x-icon">
 </head>
+
 <body class="orange">
+    <video id="videoPlayer" muted onended="playNextVideo1()">
+        <!-- <source src="../../videos/Botschaften/White/LinkesFirefly_Path_Lastscene.webm" type="video/webm"> -->
+        <source src="../../videos/Ende/Happy_KurzFireflySlow.webm" type="video/webm">
+        <source src="../../videos/Botschaften/White/LinkesFirefly_Wiggle_Lastscene.webm" type="video/webm">
+    </video>
+
     <div class="guess-letters" id="word"></div>
 
     <div class="flex-container">
@@ -18,17 +26,17 @@
             <div class="letter-row" id="row1"></div>
             <div class="letter-row" id="row2"></div>
             <div class="letter-row" id="row3"></div>
-        </div> 
+        </div>
         <div class="item w-30">
             <img id="hangman-image" src="">
         </div>
     </div>
-    
 
     <div id="remaining-tries">Versuche übrig: 4</div>
-    
+
     <button id="new-game-button">Neues Spiel</button>
     <div id="try-again-text">Ein Fehler ist nicht das Ende, sondern eine Gelegenheit,
         es beim naechsten Mal richtig zu erraten.</div>
 </body>
+
 </html>

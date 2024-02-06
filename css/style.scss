@@ -256,6 +256,14 @@ button {
   }
 }
 
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
 
 /* Hangman game */  
 
@@ -263,6 +271,8 @@ button {
   position: relative;
   top: 8rem;
   font-size: 2rem;
+  max-width: 80vw;
+  margin: 0 auto;
 }
 
 .flex-container {
@@ -394,58 +404,95 @@ button {
   }
 }
 
-.message-wrapper {
-  position: relative;
-  top: 12vh;
-  margin: 0 auto;
-  width: 60rem;
-  height: 11rem;
-  transition: opacity 1.5s ease-out;
-  background-image: url("../img/message-wrapper.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
+.message-body, .message-html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  &.hide {
-    opacity: 0;
-  }
-  
-  &.show {
-    opacity: 1;
-  }
+.message-container {
+  text-align: center;
+  width: 80vw;
+  height: 80vh;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
 
-  form {
-    font-size: 2rem;
+  .message-wrapper {
+    margin: 0 auto;
     width: 60rem;
     height: 11rem;
-    margin: 0 auto;
-    position: relative;
-    top: 1.5rem;
-
-    textarea {
-      resize: none;
+    transition: opacity 1.5s ease-out;
+    background-image: url("../img/message-wrapper.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    display: flex;
+    align-items: center;
+  
+    &.hide {
+      opacity: 0;
+    }
+    
+    &.show {
+      opacity: 1;
+    }
+  
+    form {
+      font-size: 2rem;
+      width: 60rem;
+      height: 11rem;
       margin: 0 auto;
-      background: transparent;
-      border: none;
-      color: $main-font-color;
-      font-family: $main-font-family;
-      width: 41rem;
-      height: 8rem;
-      text-align: center;
-      font-size: 1.5rem;
-
-      &:focus {
-        outline: none;
+      // position: relative;
+      // top: 1.5rem;
+  
+      textarea {
+        resize: none;
+        margin: 0 auto;
+        background: transparent;
+        border: none;
+        color: $main-font-color;
+        font-family: $main-font-family;
+        width: 41rem;
+        height: 8rem;
+        text-align: center;
+        font-size: 1.5rem;
+  
+        &:focus {
+          outline: none;
+        }
+        
       }
-      
+    }
+  }
+
+
+  .btn-wrapper {
+    margin: 0 auto;
+    position: unset;
+    transform: unset;
+
+    &.send-message {
+      &:hover {
+        cursor: not-allowed !important;
+      }
     }
   }
 }
 
-.btn-wrapper {
-  &.send-message {
-    &:hover {
-      cursor: not-allowed !important;
-    }
-  }
+#flex-container, #word {
+  transition: opacity 3s ease-in-out, font-size 3s ease-in-out, display 3s ease-in-out;
+}
+
+#flex-container {
+  display: flex;
+}
+
+#word {
+  opacity: 1;
+  font-size: 2rem;
 }
