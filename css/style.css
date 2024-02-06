@@ -52,6 +52,21 @@ video {
 .text-wrapper.show {
   opacity: 1;
 }
+.text-wrapper.text-wrapper-orange {
+  background-image: url("../img/text-wrapper-orange.png");
+}
+.text-wrapper.text-wrapper-mint {
+  background-image: url("../img/text-wrapper-mint.png");
+}
+.text-wrapper.text-wrapper-blue {
+  background-image: url("../img/text-wrapper-blue.png");
+}
+.text-wrapper.text-wrapper-pink {
+  background-image: url("../img/text-wrapper-pink.png");
+}
+.text-wrapper.text-wrapper-green {
+  background-image: url("../img/text-wrapper-green.png");
+}
 
 button {
   font-family: Koulen;
@@ -396,4 +411,15 @@ button:hover {
 #word {
   opacity: 1;
   font-size: 2rem;
+}
+
+#videoPlayer7 {
+  display: none;
+  position: relative;
+  left: 26rem;
+  top: -10rem;
+}
+
+#videoPlayer8 {
+  display: none;
 }/*# sourceMappingURL=style.css.map */

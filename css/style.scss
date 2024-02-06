@@ -88,6 +88,26 @@ video {
     opacity: 1;
     // transition: opacity 1.5s ease-out;
   }
+
+  &.text-wrapper-orange {
+    background-image: url("../img/text-wrapper-orange.png");
+  }
+
+  &.text-wrapper-mint {
+    background-image: url("../img/text-wrapper-mint.png");
+  }
+
+  &.text-wrapper-blue {
+    background-image: url("../img/text-wrapper-blue.png");
+  }
+
+  &.text-wrapper-pink {
+    background-image: url("../img/text-wrapper-pink.png");
+  }
+
+  &.text-wrapper-green {
+    background-image: url("../img/text-wrapper-green.png");
+  }
 }
 
 
@@ -495,4 +515,15 @@ button {
 #word {
   opacity: 1;
   font-size: 2rem;
+}
+
+#videoPlayer7 {
+  display: none;
+  position: relative;
+  left: 26rem;
+  top: -10rem;
+}
+
+#videoPlayer8 {
+  display: none;
 }
