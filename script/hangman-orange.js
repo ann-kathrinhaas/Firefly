@@ -292,9 +292,4 @@ for (let i = 0; i < row3Letters.length; i++) {
     row3Element.appendChild(createLetterButton(letter));
 }
 
-// newGameButton.addEventListener('click', () => {
-//     // location.reload(); // Lädt die Seite neu, um ein neues Spiel zu starten
-//     window.location.href = 'Kategorien.html'; // hier noch die Anfangsanimation anpassen
-// });
-
 updateWordDisplay();
