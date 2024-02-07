@@ -1,71 +1,6 @@
-setTimeout(function() {
-    var textWrapper = document.querySelector('.t-w-1');
-    
-    setTimeout(function() {
-        textWrapper.classList.remove('hide');
-        textWrapper.classList.add('show');
-        
-        setTimeout(function() {
-            var i = 0;
-            var texts = [
-                'Huch, wer bist du denn?', 
-                'Sieht so aus, als haettest du dich verlaufen.', 
-                'Lass mich dir helfen, deinen Weg zu finden.', 
-                'Komm mit ...'
-            ];
-
-            var speed = 50;
-            var currentIndex = 0;
-
-            function typeWriter() {
-                if (i < texts[currentIndex].length) {
-                    document.getElementById("text-1").innerHTML += texts[currentIndex].charAt(i);
-                    i++;
-                    setTimeout(typeWriter, speed);
-                } else if (currentIndex < texts.length - 1) {
-                    setTimeout(function () {
-                        i = 0;
-                        currentIndex++;
-                        document.getElementById("text-1").innerHTML = '';
-                        typeWriter();
-                    }, 2000);
-                } else {
-                    setTimeout(function() {
-                        textWrapper.classList.remove('show');
-                        textWrapper.classList.add('hide');
-                    }, 3000);
-                }
-            }
-
-            typeWriter();
-        }, 3000);
-    }, 5000);
-}, 7000);
-
-
-setTimeout(function() {
-    var btnWrapper = document.querySelector('.btn-wrapper');
-    setTimeout(function() {
-        btnWrapper.classList.remove('hide');
-        btnWrapper.classList.add('show');
-    }, 5000);
-}, 30000);
-
-
-function redirectToCategories() {
-    window.location.href = 'Kategorien.html';
-}
-
-
-function playNextVideo() {
-    document.getElementById('videoPlayer').src = '../videos/Szene_2/Szene2_02.webm';
-    document.getElementById('videoPlayer').play();
-  }
-
-
-  function playNextVideo() {
+function playNextVideo1() {
     const videoSources = [
-      "../videos/Szene_2/Szene2_02.webm"
+        "../videos/Szene_2/Szene2_02.webm"
     ];
 
     const videoPlayer = document.getElementById('videoPlayer');
@@ -76,26 +11,26 @@ function playNextVideo() {
 
     videoPlayer.src = nextVideoSource;
     videoPlayer.play();
-  }
+}
 
+// Text von Firefly
+setTimeout(function () {
+    let textWrapper = document.querySelector('.t-w-2');
 
-setTimeout(function() {
-    var textWrapper = document.querySelector('.t-w-2');
-    
-    setTimeout(function() {
+    setTimeout(function () {
         textWrapper.classList.remove('hide');
         textWrapper.classList.add('show');
-        
-        setTimeout(function() {
-            var i = 0;
-            var texts = [
+
+        setTimeout(function () {
+            let i = 0;
+            let texts = [
                 'Da bist du ja wieder.',
-                'Schau mal, hier kannst du einen Pfad aussuchen.', 
+                'Schau mal, hier kannst du einen Pfad aussuchen.',
                 'Welche Richtung moechtest du einschlagen?'
             ];
 
-            var speed = 50;
-            var currentIndex = 0;
+            let speed = 50;
+            let currentIndex = 0;
 
             function typeWriter() {
                 if (i < texts[currentIndex].length) {
@@ -110,7 +45,7 @@ setTimeout(function() {
                         typeWriter();
                     }, 2000);
                 } else {
-                    setTimeout(function() {
+                    setTimeout(function () {
                         textWrapper.classList.remove('show');
                         textWrapper.classList.add('hide');
                     }, 3000);
@@ -123,17 +58,17 @@ setTimeout(function() {
 }, 7000);
 
 
-setTimeout(function() {
+setTimeout(function () {
     let hoverCategory = document.querySelectorAll('.category');
-    
-    hoverCategory.forEach(function(element) {
+
+    hoverCategory.forEach(function (element) {
         element.classList.add('active');
     });
 
     changeSign();
-}, 20000);
+}, 30000);
 
-
+// Anpassung Schild, wenn über die Kategorien gehovert wird
 function changeSign() {
     let sign = document.querySelector('.sign-dark');
     let signOrange = document.querySelector('.sign-orange');
@@ -220,58 +155,41 @@ function changeSign() {
 
 }
 
-// function redirectToCategory1() {
-//     window.location.href = 'Leuchtkraft_des_Moments.html';
-// }
+// Auswahl einer Kategorie -> Weiterleitung zum jeweiligen Spiel mit Übergangseffekt
+function redirectToCategory(index) {
+    const transitionDelay = 1000; // 1 Sekunde Verzögerung
 
-function redirectToCategory1() {
-    setTimeout(function() {
-        window.location.href = 'Leuchtkraft_des_Moments.html';
-    }, 20000);
+    document.body.classList.add('fade-out');
+
+    setTimeout(function () {
+        switch (index) {
+            case 1:
+                window.location.href = "Leuchtkraft_des_Moments/Leuchtkraft_des_Moments.html";
+                break;
+            case 2:
+                window.location.href = "Gluehwuermchen_der_Hoffnung/Gluehwuermchen_der_Hoffnung.html";
+                break;
+            case 3:
+                window.location.href = "Strahlen_der_Dankbarkeit/Strahlen_der_Dankbarkeit.html";
+                break;
+            case 4:
+                window.location.href = "Lichter_des_Lachens/Lichter_des_Lachens.html";
+                break;
+            case 5:
+                window.location.href = "Strahlen_der_Verbundenheit/Strahlen_der_Verbundenheit.html";
+                break;
+        }
+    }, transitionDelay);
 }
 
-function redirectToCategory2() {
-    setTimeout(function() {
-        window.location.href = 'Gluehwuermchen_der_Hoffnung.html';
-    }, 20000);
-}
 
-function redirectToCategory3() {
-    setTimeout(function() {
-        window.location.href = 'Strahlen_der_Dankbarkeit.html';
-    }, 20000);
-}
-
-function redirectToCategory4() {
-    setTimeout(function() {
-        window.location.href = 'Lichter_des_Lachens.html';
-    }, 20000);
-}
-
-function redirectToCategory5() {
-    setTimeout(function() {
-        window.location.href = 'Strahlen_der_Verbundenheit.html';
-    }, 20000);
-}
-
-// function redirectToCategory2() {
-//     window.location.href = 'Gluehwuermchen_der_Hoffnung.html';
-// }
-
-// function redirectToCategory3() {
-//     window.location.href = 'Strahlen_der_Dankbarkeit.html';
-// }
-
-// function redirectToCategory4() {
-//     window.location.href = 'Lichter_des_Lachens.html';
-// }
-
-// function redirectToCategory5() {
-//     window.location.href = 'Strahlen_der_Verbundenheit.html';
-// }
-
-
+// Über Kategorien (Schild) kann erst nach 30s gehovert werden, da dann der Text von Firefly weg ist
 setTimeout(function () {
+    // Iteriert über Elemente mit der Klasse "category" und fügt jedem div ein onclick hinzu 
+    let categories = document.querySelectorAll('.category');
+    categories.forEach(function (category, index) {
+        category.setAttribute('onclick', 'redirectToCategory(' + (index + 1) + ')');
+    });
     document.querySelectorAll('.category').forEach(function (category) {
         category.addEventListener('mouseenter', function () {
             let text = getCategoryText(category.classList);
@@ -284,15 +202,15 @@ setTimeout(function () {
     });
 
     changeSign();
-}, 20000);
+}, 30000);
 
-
-setTimeout(function() {
+// Erklärung der Kategorien
+setTimeout(function () {
     let hoverCategory = document.querySelectorAll('.category');
-    
-    hoverCategory.forEach(function(element) {
+
+    hoverCategory.forEach(function (element) {
         element.classList.add('active');
-        element.addEventListener('mouseenter', function() {
+        element.addEventListener('mouseenter', function () {
             updateTextWrapper(this);
         });
     });
@@ -300,22 +218,22 @@ setTimeout(function() {
     changeSign();
 
     function updateTextWrapper(element) {
-        var textWrapper = document.querySelector('.t-w-3');
-        var textElement = document.getElementById("text-3");
-    
-        var text = element.dataset.text;
-        
+        let textWrapper = document.querySelector('.t-w-3');
+        let textElement = document.getElementById("text-3");
+
+        let text = element.dataset.text;
+
         textElement.innerHTML = text;
-    
+
         textWrapper.classList.remove('hide');
         textWrapper.classList.add('show');
     }
 
-}, 20000);
+}, 30000);
 
-
+// Erklärung der Kategorie verschwindet, wenn nicht mehr drüber gehovert wird
 function resetTextWrapper() {
-    var textWrapper = document.querySelector('.t-w-3');
+    let textWrapper = document.querySelector('.t-w-3');
     textWrapper.classList.remove('show');
     textWrapper.classList.add('hide');
 }

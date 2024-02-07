@@ -1,27 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FIREFLY</title>
     <link rel="stylesheet" href="../css/style.css">
-    <script src="../script/categories.js" defer></script>
+    <script src="../script/new_try.js" defer></script>
     <link rel="icon" href="../img/favicon.png" type="image/x-icon">
 </head>
-<style>
-    body {
-        opacity: 1;
-        transition: opacity 0.5s ease;
-    }
-
-    .fade-out {
-        opacity: 0;
-    }
-</style>
 <body>
-    <video id="videoPlayer" muted autoplay onended="playNextVideo1()">
+    <video id="videoPlayer" autoplay muted onended="playNextVideo()">
         <source src="../videos/Szene_2/Szene2_01.webm" type="video/webm">
         <source src="../videos/Szene_2/Szene2_02.webm" type="video/webm">
     </video>
@@ -46,22 +35,19 @@
             <source src="../videos/Szene_2/Szene_2_sign_green.webm" type="video/webm">
         </video>
         <div class="hover-wrapper">
-            <div class="category c-1" data-text="Hier geht es um Motivation."></div>
-            <div class="category c-2" data-text="Hier geht es um Hoffnung."></div>
-            <div class="category c-3" data-text="Hier geht es um Dankbarkeit."></div>
-            <div class="category c-4" data-text="Hier kannst du lachen."></div>
-            <div class="category c-5" data-text="Hier findest du Worte deiner Mitspieler."
-                onclick="redirectToCategory5()"></div>
+            <div class="category c-1" data-text="Hier geht es um Motivation." onclick="redirectToCategory1()"></div>
+            <div class="category c-2" data-text="Hier geht es um Hoffnung." onclick="redirectToCategory2()"></div>
+            <div class="category c-3" data-text="Hier geht es um Dankbarkeit." onclick="redirectToCategory3()"></div>
+            <div class="category c-4" data-text="Hier kannst du lachen." onclick="redirectToCategory4()"></div>
+            <div class="category c-5" data-text="Hier findest du Worte deiner Mitspieler." onclick="redirectToCategory5()"></div>
         </div>
     </div>
 
     <div class="text-wrapper t-w-2 hide">
         <p id="text-2"></p>
     </div>
-    <!-- Text für Erklärung der Kategorien -->
     <div class="text-wrapper t-w-3 hide">
         <p id="text-3"></p>
     </div>
 </body>
-
 </html>

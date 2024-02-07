@@ -7,11 +7,22 @@ $mint: #8DF5DC;
 $blue: #0894E2;
 $pink: #F34DD9;
 $green: #85FC3C;
+$grey: #929292;
+
+$orange-gradient: linear-gradient(90deg, rgba(255,138,0,1) 0%, rgba(159,103,37,1) 50%, rgba(103,59,7,1) 100%); 
+$mint-gradient: linear-gradient(90deg, rgba(101,255,220,1) 0%, rgba(61,139,121,1) 50%, rgba(33,58,52,1) 100%);
+$blue-gradient: linear-gradient(90deg, rgba(0,165,255,1) 0%, rgba(6,107,163,1) 50%, rgba(23,63,85,1) 100%);
+$pink-gradient: linear-gradient(90deg, rgba(254,102,230,1) 0%, rgba(187,80,170,1) 50%, rgba(78,15,68,1) 100%); 
+$green-gradient: linear-gradient(90deg, rgba(133,252,60,1) 0%, rgba(93,154,56,1) 50%, rgba(40,65,24,1) 100%);
+$grey-gradient: linear-gradient(90deg, rgba(185,185,185,1) 0%, rgba(150,150,150,1) 50%, rgba(80,79,79,1) 100%);
 
 
 $bg-color: $black;
 
 $main-font-color: $white;
+$main-font-family: Koulen;
+
+$border-white: rgba(255, 255, 255, 0.1);
 
 
 // Styling
@@ -21,7 +32,7 @@ body {
   color: $main-font-color;
   text-align: center;
   color: white;
-  font-family: Koulen;
+  font-family: $main-font-family;
   text-transform: uppercase;
   font-weight: 400;
   word-wrap: break-word;
@@ -68,13 +79,34 @@ video {
   p {
     font-size: 1.5rem;
     position: relative;
-    margin: 0;
+    margin: 0 auto;
     bottom: -9vh;
+    width: 35rem;
   }
 
   &.show {
     opacity: 1;
     // transition: opacity 1.5s ease-out;
+  }
+
+  &.text-wrapper-orange {
+    background-image: url("../img/text-wrapper-orange.png");
+  }
+
+  &.text-wrapper-mint {
+    background-image: url("../img/text-wrapper-mint.png");
+  }
+
+  &.text-wrapper-blue {
+    background-image: url("../img/text-wrapper-blue.png");
+  }
+
+  &.text-wrapper-pink {
+    background-image: url("../img/text-wrapper-pink.png");
+  }
+
+  &.text-wrapper-green {
+    background-image: url("../img/text-wrapper-green.png");
   }
 }
 
@@ -107,24 +139,31 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: opacity 1.5s ease-out;
 
-  .btn-start {
+  .btn-start, .btn-new-try, .btn-new-game {
     width: 25rem;
     height: 10rem;
     background-color: transparent;
     border: none;
+    position: relative;
+    top: -0.7rem;
+    left: 0.5rem;
   }
 
   &.hide {
     opacity: 0;
+    pointer-events: none;
   }
 
   &.show {
     opacity: 1;
+    pointer-events: auto;
   }
 
   &:hover {
     background-image: url("../img/btn-start-hover.png");
+    transition: background-image 1.5s ease; 
   }
 }
 
@@ -242,4 +281,256 @@ button {
   to {
     opacity: 1;
   }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Hangman game */  
+
+.guess-letters {
+  position: relative;
+  top: 8rem;
+  font-size: 2rem;
+  max-width: 80vw;
+  margin: 0 auto;
+}
+
+.flex-container {
+  display: flex;
+  width: 90vw;
+  margin: 0 auto;
+  position: relative;
+  top: 50vh;
+
+  .item {
+    &.w-70 {
+      width: 70%;
+
+      .letter-row {
+        margin-top: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+      }
+    }
+
+    &.w-30 {
+      width: 30%;
+    }
+  }
+}
+
+.letter {
+  display: inline-block;
+  margin: 0.5rem;
+  cursor: pointer;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  box-shadow: inset 0 0 10px $black;
+}
+
+#remaining-tries {
+  font-size: 20px;
+  margin-top: 10px;
+  opacity: 0;
+}
+
+#hangman-image {
+  max-width: 100%;
+  height: auto;
+  animation: fadeOut 10s ease-out;
+}
+
+#new-game-button {
+  display: none;
+  margin-top: 20px;
+  animation: fadeIn 10s ease-out;
+  margin: 0 auto;
+}
+
+#try-again-text {
+  display: none;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 1);
+  font-size: 2rem;
+  position: relative;
+  bottom: 5rem;
+  animation: fadeOut 10s ease-out;
+}
+
+// Orange – Leuchtkraft des Moments
+.orange {
+  .letter {
+    background: $orange-gradient;
+    // background-image: url("../img/letter-btn-orange.png");
+
+    &:hover {
+      box-shadow: 0 0 30px  $orange,
+    }
+  }
+}
+
+// Mint – Gluehwuermchen der Hoffnung
+.mint {
+  .letter {
+    background: $mint-gradient;
+
+    &:hover {
+      box-shadow: 0 0 30px  $mint,
+    }
+  }
+}
+
+// Blue – Strahlen der Dankbarkeit
+.blue {
+  .letter {
+    background: $blue-gradient;
+
+    &:hover {
+      box-shadow: 0 0 30px  $blue,
+    }
+  }
+}
+
+// Pink – Lichter des Lachens
+.pink {
+  .letter {
+    background: $pink-gradient;
+
+    &:hover {
+      box-shadow: 0 0 30px  $pink,
+    }
+  }
+}
+
+// Green – Strahlen der Verbundenheit
+.green {
+  .letter {
+    background: $green-gradient;
+
+    &:hover {
+      box-shadow: 0 0 30px  $green,
+    }
+  }
+}
+
+.orange, .mint, .blue, .pink, .green {
+  .letter {
+    &.used {
+      background: $grey-gradient;
+      pointer-events: none;
+    }
+  }
+}
+
+.message-body, .message-html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.message-container {
+  text-align: center;
+  width: 80vw;
+  height: 80vh;
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+
+  .message-wrapper {
+    margin: 0 auto;
+    width: 60rem;
+    height: 11rem;
+    transition: opacity 1.5s ease-out;
+    background-image: url("../img/message-wrapper.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    display: flex;
+    align-items: center;
+  
+    &.hide {
+      opacity: 0;
+    }
+    
+    &.show {
+      opacity: 1;
+    }
+  
+    form {
+      font-size: 2rem;
+      width: 60rem;
+      height: 11rem;
+      margin: 0 auto;
+      // position: relative;
+      // top: 1.5rem;
+  
+      textarea {
+        resize: none;
+        margin: 0 auto;
+        background: transparent;
+        border: none;
+        color: $main-font-color;
+        font-family: $main-font-family;
+        width: 41rem;
+        height: 8rem;
+        text-align: center;
+        font-size: 1.5rem;
+  
+        &:focus {
+          outline: none;
+        }
+        
+      }
+    }
+  }
+
+
+  .btn-wrapper {
+    margin: 0 auto;
+    position: unset;
+    transform: unset;
+
+    &.send-message {
+      &:hover {
+        cursor: not-allowed !important;
+      }
+    }
+  }
+}
+
+#flex-container, #word {
+  transition: opacity 3s ease-in-out, font-size 3s ease-in-out, display 3s ease-in-out;
+}
+
+#flex-container {
+  display: flex;
+}
+
+#word {
+  opacity: 1;
+  font-size: 2rem;
+}
+
+#videoPlayer7, #videoPlayer9 {
+  display: none;
+  position: relative;
+  left: 26rem;
+  top: -10rem;
+}
+
+#videoPlayer8, #videoPlayer10 {
+  display: none;
 }
