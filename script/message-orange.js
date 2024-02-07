@@ -256,5 +256,5 @@ function newGame() {
             btnWrapper.classList.remove('hide');
             btnWrapper.classList.add('show');
         }, 5000);
-    }, 15000); // anpassen
+    }, 15000);
 }

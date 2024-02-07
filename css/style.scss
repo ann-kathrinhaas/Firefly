@@ -139,6 +139,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: opacity 1.5s ease-out;
 
   .btn-start, .btn-new-try, .btn-new-game {
     width: 25rem;
@@ -160,6 +161,7 @@ button {
 
   &:hover {
     background-image: url("../img/btn-start-hover.png");
+    transition: background-image 1.5s ease; 
   }
 }
 

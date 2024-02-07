@@ -93,6 +93,7 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: opacity 1.5s ease-out;
 }
 .btn-wrapper .btn-start, .btn-wrapper .btn-new-try, .btn-wrapper .btn-new-game {
   width: 25rem;
@@ -111,6 +112,7 @@ button:hover {
 }
 .btn-wrapper:hover {
   background-image: url("../img/btn-start-hover.png");
+  transition: background-image 1.5s ease;
 }
 
 .sign-wrapper .sign {
