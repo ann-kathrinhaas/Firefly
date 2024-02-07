@@ -10,7 +10,6 @@ body {
   margin: 0;
   overflow: hidden;
   background-image: url("../img/stars.png");
-  background-image: url("../img/bg-lights.png");
 }
 
 p {
@@ -46,8 +45,9 @@ video {
 .text-wrapper p {
   font-size: 1.5rem;
   position: relative;
-  margin: 0;
+  margin: 0 auto;
   bottom: -9vh;
+  width: 35rem;
 }
 .text-wrapper.show {
   opacity: 1;
@@ -94,11 +94,14 @@ button:hover {
   align-items: center;
   justify-content: center;
 }
-.btn-wrapper .btn-start, .btn-wrapper .btn-new-try {
+.btn-wrapper .btn-start, .btn-wrapper .btn-new-try, .btn-wrapper .btn-new-game {
   width: 25rem;
   height: 10rem;
   background-color: transparent;
   border: none;
+  position: relative;
+  top: -0.7rem;
+  left: 0.5rem;
 }
 .btn-wrapper.hide {
   opacity: 0;
@@ -276,14 +279,6 @@ button:hover {
   /* display: none; */
 }
 
-#new-game-button {
-  display: none;
-  margin-top: 20px;
-  -webkit-animation: fadeIn 10s ease-out;
-          animation: fadeIn 10s ease-out;
-  margin: 0 auto;
-}
-
 #try-again-text {
   display: none;
   text-shadow: 0 0 10px rgb(255, 255, 255);
@@ -413,13 +408,13 @@ button:hover {
   font-size: 2rem;
 }
 
-#videoPlayer7 {
+#videoPlayer7, #videoPlayer9 {
   display: none;
   position: relative;
   left: 26rem;
   top: -10rem;
 }
 
-#videoPlayer8 {
+#videoPlayer8, #videoPlayer10 {
   display: none;
 }/*# sourceMappingURL=style.css.map */
