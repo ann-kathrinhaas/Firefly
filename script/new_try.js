@@ -15,6 +15,7 @@ function playNextVideo() {
     videoPlayer.play();
 }
 
+// Text von Firefly
 setTimeout(function () {
     let textWrapper = document.querySelector('.t-w-2');
 
@@ -157,25 +158,31 @@ function changeSign() {
 
 }
 
-// Auswahl einer Kategorie -> Weiterleitung zum jeweiligen Spiel
+// Auswahl einer Kategorie -> Weiterleitung zum jeweiligen Spiel mit Übergangseffekt
 function redirectToCategory(index) {
-    switch (index) {
-      case 1:
-        window.location.href = "Leuchtkraft_des_Moments.html";
-        break;
-      case 2:
-        window.location.href = "Gluehwuermchen_der_Hoffnung.html";
-        break;
-      case 3:
-        window.location.href = "Strahlen_der_Dankbarkeit.html";
-        break;
-      case 4:
-        window.location.href = "Lichter_des_Lachens.html";
-        break;
-      case 5:
-        window.location.href = "Strahlen_der_Verbundenheit.html";
-        break;
-    }
+    const transitionDelay = 1000; // 1 Sekunde Verzögerung
+
+    document.body.classList.add('fade-out');
+
+    setTimeout(function () {
+        switch (index) {
+            case 1:
+                window.location.href = "Leuchtkraft_des_Moments/Leuchtkraft_des_Moments.html";
+                break;
+            case 2:
+                window.location.href = "Gluehwuermchen_der_Hoffnung/Gluehwuermchen_der_Hoffnung.html";
+                break;
+            case 3:
+                window.location.href = "Strahlen_der_Dankbarkeit/Strahlen_der_Dankbarkeit.html";
+                break;
+            case 4:
+                window.location.href = "Lichter_des_Lachens/Lichter_des_Lachens.html";
+                break;
+            case 5:
+                window.location.href = "Strahlen_der_Verbundenheit/Strahlen_der_Verbundenheit.html";
+                break;
+        }
+    }, transitionDelay);
 }
 
 // Iteriert über Elemente mit der Klasse "category" und fügt jedem div ein onclick hinzu 
