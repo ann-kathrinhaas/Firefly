@@ -154,3 +154,7 @@ function showFireflyText () {
         }, 3000);
     }, 5000);
 }
+
+function showMessage () {
+    
+}

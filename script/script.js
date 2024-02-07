@@ -58,13 +58,6 @@ function redirectToCategories() {
     window.location.href = 'Kategorien.html';
 }
 
-
-// function playNextVideo1() {
-//     document.getElementById('videoPlayer').src = '../videos/Szene_2/Szene2_02.webm';
-//     document.getElementById('videoPlayer').play();
-// }
-
-
 function playNextVideo1() {
     const videoSources = [
         "../videos/Szene_2/Szene2_02.webm"
