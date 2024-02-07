@@ -18,7 +18,7 @@ const sentencesToGuess = [
     "Ich bin nicht faul. Ich bin energetisch sparsam.",
     "Warum ich ein Nickerchen mache? Weil Schlaf die Antwort auf alle Fragen ist.",
     "Warum ich meinen Schluessel verlegt habe? Weil er nicht zuruecklaechelte.",
-    "Ae Taennschen bitte."
+    "Ae Taennschen bitte."    
 ];
 
 // Zufällig einen Satz auswählen

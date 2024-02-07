@@ -1,5 +1,5 @@
 // Übergang zur Seite
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     document.body.classList.remove('fade-out');
     document.body.style.opacity = 1;
 });
@@ -9,15 +9,16 @@ let hangmanImageIndex = 0;
 
 // Vordefinierte Sätze, die der Spieler erraten kann
 const sentencesToGuess = [
-    "Erfolg ist die Summe kleiner Anstrengungen, die jeden Tag unternommen werden.",
-    "Der Weg zum Erfolg beginnt damit, den ersten Schritt zu tun.",
-    "Du musst das Unmoegliche versuchen, um das Moegliche zu erreichen.",
-    "Erfolg ist keine Glueckssache, sondern das Ergebnis harter Arbeit und Ausdauer.",
-    "Die Motivation kommt oft erst, wenn du die ersten Schritte unternimmst.",
-    "Man ist nie zu klein, um großartig zu sein.",
-    "Motivation ist das, was dich starten laesst. Gewohnheit ist, was dich am Ball haelt.",
-    "Die groesste Motivation kommt aus dem Inneren. Finde deine Leidenschaft und lass sie dich antreiben.",
-    "Gib niemals auf. Erfolg beginnt im Kopf.",
+    "Das Leben ist wie ein Buch, und diejenigen, die nicht reisen, lesen nur eine Seite.",
+    "Jeder Sonnenaufgang bringt eine neue Chance.",
+    "In jedem Ende liegt ein neuer Anfang.",
+    "Wo immer du einen Funken Leben findest, halte daran fest und lass ihn leuchten.",
+    "Die Nacht ist am dunkelsten kurz vor dem Morgengrauen.",
+    "Wenn du denkst, es ist vorbei, koennte es gerade erst beginnen.",
+    "Lass dir von der Negativitaet anderer nicht deinen Sonnenschein rauben.",
+    "Die groeßten Wunder beginnen oft mit einem einfachen Traum.",
+    "Auch die schwaechste Flamme kann die Dunkelheit erhellen.",
+    "Selbst in der tiefsten Verzweiflung kann ein Funke Hoffnung gefunden werden."
 ];
 
 // Zufällig einen Satz auswählen
@@ -181,7 +182,7 @@ function checkLetter(letter) {
 
                                         document.body.appendChild(videoPlayer3);
 
-                                        videoPlayer3.addEventListener('ended', function() { // Wenn Firefly rausgeflogen ist -> Weiterleitung zu Botschaften
+                                        videoPlayer3.addEventListener('ended', function () { // Wenn Firefly rausgeflogen ist -> Weiterleitung zu Botschaften
                                             // window.location.href = "Botschaften.html";
                                             setTimeout(function () {
                                                 window.location.href = "Botschaften.html";
@@ -197,7 +198,7 @@ function checkLetter(letter) {
                     }, 5000);
                 }, 7000);
 
-        
+
             }, 2000);
         }
 

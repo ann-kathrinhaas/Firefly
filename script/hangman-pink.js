@@ -1,5 +1,5 @@
 // Übergang zur Seite
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     document.body.classList.remove('fade-out');
     document.body.style.opacity = 1;
 });
@@ -9,15 +9,17 @@ let hangmanImageIndex = 0;
 
 // Vordefinierte Sätze, die der Spieler erraten kann
 const sentencesToGuess = [
-    "Erfolg ist die Summe kleiner Anstrengungen, die jeden Tag unternommen werden.",
-    "Der Weg zum Erfolg beginnt damit, den ersten Schritt zu tun.",
-    "Du musst das Unmoegliche versuchen, um das Moegliche zu erreichen.",
-    "Erfolg ist keine Glueckssache, sondern das Ergebnis harter Arbeit und Ausdauer.",
-    "Die Motivation kommt oft erst, wenn du die ersten Schritte unternimmst.",
-    "Man ist nie zu klein, um großartig zu sein.",
-    "Motivation ist das, was dich starten laesst. Gewohnheit ist, was dich am Ball haelt.",
-    "Die groesste Motivation kommt aus dem Inneren. Finde deine Leidenschaft und lass sie dich antreiben.",
-    "Gib niemals auf. Erfolg beginnt im Kopf.",
+    "Die groeßte Freude liegt im Einfachen.",
+    "Es ist nicht genug zu haben, man muss auch schaetzen.",
+    "Der Moment, in dem du anfaengst, dankbar zu sein, ist der Moment, in dem du gluecklich wirst.",
+    "Die groeßte Freude im Leben liegt im Schaetzen der kleinen Dinge.",
+    "Die groeßten Schaetze im Leben sind oft unsichtbar.",
+    "Wenn du zaehlst, was du hast, wird das, was du nicht hast, weniger wichtig.",
+    "Die wahre Schoenheit des Lebens zeigt sich, wenn wir uns fuer die Gegenwart oeffnen.",
+    "Das Glueck liegt oft in den kleinen Dingen des Lebens.",
+    "Manchmal muessen wir die Dunkelheit erleben, um das Licht zu schaetzen.",
+    "Dankbarkeit veraendert alles."
+
 ];
 
 // Zufällig einen Satz auswählen
@@ -181,7 +183,7 @@ function checkLetter(letter) {
 
                                         document.body.appendChild(videoPlayer3);
 
-                                        videoPlayer3.addEventListener('ended', function() { // Wenn Firefly rausgeflogen ist -> Weiterleitung zu Botschaften
+                                        videoPlayer3.addEventListener('ended', function () { // Wenn Firefly rausgeflogen ist -> Weiterleitung zu Botschaften
                                             // window.location.href = "Botschaften.html";
                                             setTimeout(function () {
                                                 window.location.href = "Botschaften.html";
@@ -197,7 +199,7 @@ function checkLetter(letter) {
                     }, 5000);
                 }, 7000);
 
-        
+
             }, 2000);
         }
 
@@ -292,4 +294,4 @@ for (let i = 0; i < row3Letters.length; i++) {
     row3Element.appendChild(createLetterButton(letter));
 }
 
-updateWordDisplay();s
+updateWordDisplay(); s

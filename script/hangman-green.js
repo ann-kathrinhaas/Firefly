@@ -1,5 +1,5 @@
 // Übergang zur Seite
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     document.body.classList.remove('fade-out');
     document.body.style.opacity = 1;
 });
@@ -9,15 +9,16 @@ let hangmanImageIndex = 0;
 
 // Vordefinierte Sätze, die der Spieler erraten kann
 const sentencesToGuess = [
-    "Erfolg ist die Summe kleiner Anstrengungen, die jeden Tag unternommen werden.",
-    "Der Weg zum Erfolg beginnt damit, den ersten Schritt zu tun.",
-    "Du musst das Unmoegliche versuchen, um das Moegliche zu erreichen.",
-    "Erfolg ist keine Glueckssache, sondern das Ergebnis harter Arbeit und Ausdauer.",
-    "Die Motivation kommt oft erst, wenn du die ersten Schritte unternimmst.",
-    "Man ist nie zu klein, um großartig zu sein.",
-    "Motivation ist das, was dich starten laesst. Gewohnheit ist, was dich am Ball haelt.",
-    "Die groesste Motivation kommt aus dem Inneren. Finde deine Leidenschaft und lass sie dich antreiben.",
-    "Gib niemals auf. Erfolg beginnt im Kopf.",
+    "Viel Glueck bei den Pruefungen und ich hoffe deine Kaffeemaschine geht niemals kaputt!",
+    "Viel Erfolg bei den Pruefungen und moege dein Stress kurz und die Pausen lang sein!",
+    "Ich wuensche dir gutes Wetter mit Sonnenschein.",
+    "Ich wuensche allen ein BE, Bestehen und Essen.",
+    "Hoffentlich wird das naechste Semester besser.",
+    "Du machst tolle Arbeit fuer die Abgaben, weiter so!",
+    "Viel Glueck bei der Pruefungsphase!",
+    "Vergiss nicht Pausen zwischen dem ganzen Stress.",
+    "Du bist super wie du bist!",
+    "Ich hoffe du hast spaß am Studium."
 ];
 
 // Zufällig einen Satz auswählen
@@ -181,7 +182,7 @@ function checkLetter(letter) {
 
                                         document.body.appendChild(videoPlayer3);
 
-                                        videoPlayer3.addEventListener('ended', function() { // Wenn Firefly rausgeflogen ist -> Weiterleitung zu Botschaften
+                                        videoPlayer3.addEventListener('ended', function () { // Wenn Firefly rausgeflogen ist -> Weiterleitung zu Botschaften
                                             // window.location.href = "Botschaften.html";
                                             setTimeout(function () {
                                                 window.location.href = "Botschaften.html";
@@ -197,7 +198,7 @@ function checkLetter(letter) {
                     }, 5000);
                 }, 7000);
 
-        
+
             }, 2000);
         }
 
