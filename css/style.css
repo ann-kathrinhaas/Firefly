@@ -280,8 +280,6 @@ button:hover {
 #hangman-image {
   max-width: 100%;
   height: auto;
-  -webkit-animation: fadeOut 10s ease-out;
-          animation: fadeOut 10s ease-out;
 }
 
 #new-game-button {
