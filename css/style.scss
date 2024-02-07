@@ -153,10 +153,12 @@ button {
 
   &.hide {
     opacity: 0;
+    pointer-events: none;
   }
 
   &.show {
     opacity: 1;
+    pointer-events: auto;
   }
 
   &:hover {

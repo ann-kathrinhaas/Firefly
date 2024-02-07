@@ -106,9 +106,11 @@ button:hover {
 }
 .btn-wrapper.hide {
   opacity: 0;
+  pointer-events: none;
 }
 .btn-wrapper.show {
   opacity: 1;
+  pointer-events: auto;
 }
 .btn-wrapper:hover {
   background-image: url("../img/btn-start-hover.png");
