@@ -4,39 +4,20 @@ document.addEventListener("DOMContentLoaded", function() {
     document.body.style.opacity = 1;
 });
 
-function playNextVideo2() {
-    const videoSources = [
-        "../../videos/Botschaften/White/LinkesFirefly_Wiggle_Lastscene.webm"
-    ];
-
-    const videoPlayer2 = document.getElementById('videoPlayer');
-    const currentVideoIndex = videoSources.indexOf(videoPlayer2.src);
-
-    const nextVideoIndex = (currentVideoIndex + 1) % videoSources.length;
-    const nextVideoSource = videoSources[nextVideoIndex];
-
-    videoPlayer2.src = nextVideoSource;
-    videoPlayer2.play();
-}
-
-
 let gameInProgress = true;
 let hangmanImageIndex = 0;
 
 // Vordefinierte Sätze, die der Spieler erraten kann
 const sentencesToGuess = [
-    // "Erfolg ist die Summe kleiner Anstrengungen, die jeden Tag unternommen werden.",
-    // "Der Weg zum Erfolg beginnt damit, den ersten Schritt zu tun.",
-    // "Du musst das Unmoegliche versuchen, um das Moegliche zu erreichen.",
-    // "Erfolg ist keine Glueckssache, sondern das Ergebnis harter Arbeit und Ausdauer.",
-    // "Die Motivation kommt oft erst, wenn du die ersten Schritte unternimmst.",
-    // "Man ist nie zu klein, um großartig zu sein.",
-    // "Motivation ist das, was dich starten laesst. Gewohnheit ist, was dich am Ball haelt.",
-    // "Die groesste Motivation kommt aus dem Inneren. Finde deine Leidenschaft und lass sie dich antreiben.",
-    // "Gib niemals auf. Erfolg beginnt im Kopf.",
-    "Lass dir dein Leuchten nicht nehmen, nur weil es andere blendet.",
-    "Test",
-    "Cindy"
+    "Erfolg ist die Summe kleiner Anstrengungen, die jeden Tag unternommen werden.",
+    "Der Weg zum Erfolg beginnt damit, den ersten Schritt zu tun.",
+    "Du musst das Unmoegliche versuchen, um das Moegliche zu erreichen.",
+    "Erfolg ist keine Glueckssache, sondern das Ergebnis harter Arbeit und Ausdauer.",
+    "Die Motivation kommt oft erst, wenn du die ersten Schritte unternimmst.",
+    "Man ist nie zu klein, um großartig zu sein.",
+    "Motivation ist das, was dich starten laesst. Gewohnheit ist, was dich am Ball haelt.",
+    "Die groesste Motivation kommt aus dem Inneren. Finde deine Leidenschaft und lass sie dich antreiben.",
+    "Gib niemals auf. Erfolg beginnt im Kopf.",
 ];
 
 // Zufällig einen Satz auswählen

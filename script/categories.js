@@ -167,16 +167,16 @@ function redirectToCategory(index) {
                 window.location.href = "Leuchtkraft_des_Moments/Leuchtkraft_des_Moments.html";
                 break;
             case 2:
-                window.location.href = "Gluehwuermchen_der_Hoffnung.html";
+                window.location.href = "Gluehwuermchen_der_Hoffnung/Gluehwuermchen_der_Hoffnung.html";
                 break;
             case 3:
-                window.location.href = "Strahlen_der_Dankbarkeit.html";
+                window.location.href = "Strahlen_der_Dankbarkeit/Strahlen_der_Dankbarkeit.html";
                 break;
             case 4:
-                window.location.href = "Lichter_des_Lachens.html";
+                window.location.href = "Lichter_des_Lachens/Lichter_des_Lachens.html";
                 break;
             case 5:
-                window.location.href = "Strahlen_der_Verbundenheit.html";
+                window.location.href = "Strahlen_der_Verbundenheit/Strahlen_der_Verbundenheit.html";
                 break;
         }
     }, transitionDelay);

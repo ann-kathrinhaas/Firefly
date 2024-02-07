@@ -50,8 +50,7 @@ setTimeout(function () {
     }, 5000);
 }, 15000);
 
-// Hinzufügen: Funktion, dass Button erst nach 20s klickbar ist
-
+// Weiterleitung zu Kategorien
 function redirectToCategories2() {
     window.location.href = 'Kategorien_2.html';
 }

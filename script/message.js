@@ -5,8 +5,8 @@ setTimeout(function () {
     setTimeout(function () {
         btnWrapper.classList.remove('hide');
         btnWrapper.classList.add('show');
-    }, 100); // 5s
-}, 100); // 5s
+    }, 100);
+}, 100); 
 
 // Einblenden des Buttons
 setTimeout(function () {
@@ -56,45 +56,3 @@ function hideMessageAndButton() {
     btnWrapper.classList.remove('show');
     btnWrapper.classList.add('hide');
 }
-
-
-// setTimeout(function () {
-//     let textWrapper = document.querySelector('.t-w-4');
-
-//     setTimeout(function () {
-//         textWrapper.classList.remove('hide');
-//         textWrapper.classList.add('show');
-
-//         setTimeout(function () {
-//             let i = 0;
-//             let texts = [
-//                 'Sieh dir an, welche Botschaft fuer dich bereit steht.',
-//             ];
-
-//             let speed = 50;
-//             let currentIndex = 0;
-
-//             function typeWriter() {
-//                 if (i < texts[currentIndex].length) {
-//                     document.getElementById("text-4").innerHTML += texts[currentIndex].charAt(i);
-//                     i++;
-//                     setTimeout(typeWriter, speed);
-//                 } else if (currentIndex < texts.length - 1) {
-//                     setTimeout(function () {
-//                         i = 0;
-//                         currentIndex++;
-//                         document.getElementById("text-4").innerHTML = '';
-//                         typeWriter();
-//                     }, 2000);
-//                 } else {
-//                     setTimeout(function () {
-//                         textWrapper.classList.remove('show');
-//                         textWrapper.classList.add('hide');
-//                     }, 3000);
-//                 }
-//             }
-
-//             typeWriter();
-//         }, 3000);
-//     }, 5000);
-// }, 7000);
