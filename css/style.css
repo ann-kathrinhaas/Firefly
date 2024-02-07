@@ -280,7 +280,16 @@ button:hover {
 #hangman-image {
   max-width: 100%;
   height: auto;
-  /* display: none; */
+  -webkit-animation: fadeOut 10s ease-out;
+          animation: fadeOut 10s ease-out;
+}
+
+#new-game-button {
+  display: none;
+  margin-top: 20px;
+  -webkit-animation: fadeIn 10s ease-out;
+          animation: fadeIn 10s ease-out;
+  margin: 0 auto;
 }
 
 #try-again-text {
@@ -289,8 +298,8 @@ button:hover {
   font-size: 2rem;
   position: relative;
   bottom: 5rem;
-  -webkit-animation: fadeIn 10s ease-out;
-          animation: fadeIn 10s ease-out;
+  -webkit-animation: fadeOut 10s ease-out;
+          animation: fadeOut 10s ease-out;
 }
 
 .orange .letter {

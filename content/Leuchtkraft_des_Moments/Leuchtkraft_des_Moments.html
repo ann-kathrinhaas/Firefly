@@ -7,14 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FIREFLY</title>
     <link rel="stylesheet" href="../../css/style.css">
-    <script src="../../script/script.js" defer></script>
+    <!-- <script src="../../script/script.js" defer></script> -->
     <script src="../../script/hangman-orange.js" defer></script>
     <link rel="icon" href="../img/favicon.png" type="image/x-icon">
 </head>
-
+<style>
+    body.fade-in {
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+</style>
 <body class="orange">
-    <video id="videoPlayer" muted onended="playNextVideo()">
-        <!-- <source src="../../videos/Botschaften/White/LinkesFirefly_Path_Lastscene.webm" type="video/webm"> -->
+    <video id="videoPlayer" muted onended="playNextVideo2()">
         <source src="../../videos/Ende/Happy_KurzFireflySlow.webm" type="video/webm">
         <source src="../../videos/Botschaften/White/LinkesFirefly_Wiggle_Lastscene.webm" type="video/webm">
     </video>
@@ -34,7 +38,6 @@
 
     <div id="remaining-tries">Versuche übrig: 4</div>
 
-    <button id="new-game-button">Neues Spiel</button>
     <div id="try-again-text">Ein Fehler ist nicht das Ende, sondern eine Gelegenheit,
         es beim naechsten Mal richtig zu erraten.</div>
 </body>

@@ -1,17 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FIREFLY</title>
     <link rel="stylesheet" href="../css/style.css">
-    <script src="../script/script.js" defer></script>
+    <script src="../script/categories.js" defer></script>
     <link rel="icon" href="../img/favicon.png" type="image/x-icon">
 </head>
+<style>
+    body {
+        opacity: 1;
+        transition: opacity 0.5s ease;
+    }
+
+    .fade-out {
+        opacity: 0;
+    }
+</style>
+
 <body>
     <video id="videoPlayer" muted autoplay onended="playNextVideo1()">
-        <source src= "../videos/Szene_2/Szene2_01.webm" type="video/webm">
+        <source src="../videos/Szene_2/Szene2_01.webm" type="video/webm">
         <source src="../videos/Szene_2/Szene2_02.webm" type="video/webm">
     </video>
 
@@ -39,7 +51,8 @@
             <div class="category c-2" data-text="Hier geht es um Hoffnung."></div>
             <div class="category c-3" data-text="Hier geht es um Dankbarkeit."></div>
             <div class="category c-4" data-text="Hier kannst du lachen."></div>
-            <div class="category c-5" data-text="Hier findest du Worte deiner Mitspieler." onclick="redirectToCategory5()"></div>
+            <div class="category c-5" data-text="Hier findest du Worte deiner Mitspieler."
+                onclick="redirectToCategory5()"></div>
         </div>
     </div>
 
@@ -51,4 +64,5 @@
         <p id="text-3"></p>
     </div>
 </body>
+
 </html>

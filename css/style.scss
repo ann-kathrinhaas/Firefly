@@ -347,14 +347,14 @@ button {
 #hangman-image {
   max-width: 100%;
   height: auto;
-  /* display: none; */
+  animation: fadeOut 10s ease-out;
 }
 
 #new-game-button {
-  // display: none;
-  // margin-top: 20px;
-  // animation: fadeIn 10s ease-out;
-  // margin: 0 auto;
+  display: none;
+  margin-top: 20px;
+  animation: fadeIn 10s ease-out;
+  margin: 0 auto;
 }
 
 #try-again-text {
@@ -363,7 +363,7 @@ button {
   font-size: 2rem;
   position: relative;
   bottom: 5rem;
-  animation: fadeIn 10s ease-out;
+  animation: fadeOut 10s ease-out;
 }
 
 // Orange – Leuchtkraft des Moments

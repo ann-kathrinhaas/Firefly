@@ -1,3 +1,25 @@
+// Übergang zur Seite
+document.addEventListener("DOMContentLoaded", function() {
+    document.body.classList.remove('fade-out');
+    document.body.style.opacity = 1;
+});
+
+function playNextVideo2() {
+    const videoSources = [
+        "../../videos/Botschaften/White/LinkesFirefly_Wiggle_Lastscene.webm"
+    ];
+
+    const videoPlayer2 = document.getElementById('videoPlayer');
+    const currentVideoIndex = videoSources.indexOf(videoPlayer2.src);
+
+    const nextVideoIndex = (currentVideoIndex + 1) % videoSources.length;
+    const nextVideoSource = videoSources[nextVideoIndex];
+
+    videoPlayer2.src = nextVideoSource;
+    videoPlayer2.play();
+}
+
+
 let gameInProgress = true;
 let hangmanImageIndex = 0;
 
@@ -215,11 +237,12 @@ function checkLetter(letter) {
             //alert('Verloren! Der Satz lautet: ' + sentenceToGuess);
             setTimeout(function () {
                 hangmanImage.style.display = 'none'; // Fade hinzufügen
+                tryAgainText.style.display = 'block';
             }, 1000);
 
             setTimeout(function () {
                 window.location.href = "/content/Game_Over.html";
-            }, 3000);
+            }, 7000);
         }
     }
 }
@@ -288,10 +311,9 @@ for (let i = 0; i < row3Letters.length; i++) {
     row3Element.appendChild(createLetterButton(letter));
 }
 
-newGameButton.addEventListener('click', () => {
-    // location.reload(); // Lädt die Seite neu, um ein neues Spiel zu starten
-    window.location.href = 'Kategorien.html'; // hier noch die Anfangsanimation anpassen
-});
+// newGameButton.addEventListener('click', () => {
+//     // location.reload(); // Lädt die Seite neu, um ein neues Spiel zu starten
+//     window.location.href = 'Kategorien.html'; // hier noch die Anfangsanimation anpassen
+// });
 
 updateWordDisplay();
-

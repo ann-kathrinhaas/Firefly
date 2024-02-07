@@ -38,8 +38,8 @@ setTimeout(function () {
 
             typeWriter();
         }, 3000);
-    }, 5000);
-}, 7000);
+    }, 3000);
+}, 0);
 
 // Einblenden des Buttons für einen neuen Versuch
 setTimeout(function () {
@@ -48,7 +48,7 @@ setTimeout(function () {
         btnWrapper.classList.remove('hide');
         btnWrapper.classList.add('show');
     }, 5000);
-}, 20000); // anpassen
+}, 15000);
 
 // Hinzufügen: Funktion, dass Button erst nach 20s klickbar ist
 
