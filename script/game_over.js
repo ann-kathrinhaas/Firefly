@@ -52,5 +52,5 @@ setTimeout(function () {
 
 // Weiterleitung zu Kategorien
 function redirectToCategories2() {
-    window.location.href = 'Kategorien_2.html';
+    window.location.href = '../content/Kategorien-2.html';
 }
