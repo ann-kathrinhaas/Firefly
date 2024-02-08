@@ -245,7 +245,7 @@ function flyAwayFireflyWhite() {
 
 // Zur Startseite gelangen
 function redirectToStart() {
-    window.location.href = 'Start.html';
+    window.location.href = '../Start.html';
 }
 
 // Button für neues Spiel einblenden
