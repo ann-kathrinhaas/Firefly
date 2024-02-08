@@ -182,7 +182,6 @@ function checkLetter(letter) {
                                         document.body.appendChild(videoPlayer3);
 
                                         videoPlayer3.addEventListener('ended', function() { // Wenn Firefly rausgeflogen ist -> Weiterleitung zu Botschaften
-                                            // window.location.href = "Botschaften.html";
                                             setTimeout(function () {
                                                 window.location.href = "Botschaften.html";
                                             }, 3000);

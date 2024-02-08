@@ -42,6 +42,9 @@ sendButton.addEventListener('click', () => {
         setTimeout(function () {
             hideMessageAndButton();
         }, 5000);
+        setTimeout(function () {
+            window.location.href = "Botschaften-2.html";
+        }, 3000);
     }
 });
 
