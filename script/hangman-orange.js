@@ -221,7 +221,7 @@ function checkLetter(letter) {
             }, 1000);
 
             setTimeout(function () {
-                window.location.href = "/content/Game_Over.html";
+                window.location.href = "../Game_Over.html";
             }, 7000);
         }
     }
